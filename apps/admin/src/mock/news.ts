@@ -1,0 +1,84 @@
+export const mockInfoList = {
+  data: {
+    pageSize: 10,
+    pageNum: 1,
+    current: 1,
+    totalCount: 8,
+    data: [
+      {
+        id: 1,
+        newsNo: 'NEWS001',
+        title: '系统维护通知',
+        categoryNo: 'SYS001',
+        categoryName: '系统公告',
+        summary: '系统将于本周末进行例行维护，维护期间可能会影响部分功能的使用',
+        content: '<p>尊敬的用户：</p><p>为了提供更好的服务体验，我们将于2024年10月28日22:00-29日06:00进行系统维护。</p>',
+        cover: 'https://via.placeholder.com/300x200/4f46e5/ffffff?text=System',
+        publishState: 'publish',
+        publishTime: '2024-10-25 10:00:00',
+        gmtCreated: '2024-10-25 09:30:00',
+        gmtModified: '2024-10-25 14:20:00',
+        creator: '系统管理员',
+      },
+      {
+        id: 2,
+        newsNo: 'NEWS002',
+        title: '新功能发布：智能数据分析',
+        categoryNo: 'ACT002',
+        categoryName: '活动通知',
+        summary: '全新的智能数据分析功能正式上线',
+        content: '<h2>智能数据分析功能介绍</h2><p>我们很高兴地宣布，全新的智能数据分析功能已经正式上线！</p>',
+        cover: 'https://via.placeholder.com/300x200/10b981/ffffff?text=Feature',
+        publishState: 'publish',
+        publishTime: '2024-10-24 15:30:00',
+        gmtCreated: '2024-10-24 14:00:00',
+        gmtModified: '2024-10-24 16:45:00',
+        creator: '产品经理',
+      },
+      {
+        id: 3,
+        newsNo: 'NEWS003',
+        title: 'React 18 新特性深度解析',
+        categoryNo: 'SYS005',
+        categoryName: '版本更新',
+        summary: '详细解析 React 18 的新特性',
+        content: '<h1>React 18 新特性深度解析</h1><p>React 18 引入了并发渲染特性。</p>',
+        cover: null,
+        publishState: 'wait',
+        publishTime: null,
+        gmtCreated: '2024-10-22 16:30:00',
+        gmtModified: '2024-10-23 10:20:00',
+        creator: '技术总监',
+      },
+    ],
+  },
+  code: '200',
+  success: true,
+  message: '查询成功',
+}
+
+export const mockInfoDetail = {
+  data: {
+    id: 1,
+    newsNo: 'NEWS001',
+    title: '系统维护通知',
+    categoryNo: 'SYS001',
+    categoryName: '系统公告',
+    summary: '系统将于本周末进行例行维护',
+    content: '<p>尊敬的用户：</p><p>系统将进行维护。</p>',
+    cover: 'https://via.placeholder.com/300x200/4f46e5/ffffff?text=System',
+    publishState: 'publish',
+    publishTime: '2024-10-25 10:00:00',
+    gmtCreated: '2024-10-25 09:30:00',
+    gmtModified: '2024-10-25 14:20:00',
+    creator: '系统管理员',
+  },
+  code: '200',
+  success: true,
+  message: '查询成功',
+}
+
+export const mockCreateInfo = { data: { newsNo: 'NEWS_NEW_001' }, code: '200', success: true, message: '创建成功' }
+export const mockUpdateInfo = { data: null, code: '200', success: true, message: '更新成功' }
+export const mockDeleteInfo = { data: null, code: '200', success: true, message: '删除成功' }
+export const mockPublishInfo = { data: null, code: '200', success: true, message: '操作成功' }
