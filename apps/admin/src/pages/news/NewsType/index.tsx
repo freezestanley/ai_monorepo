@@ -14,7 +14,7 @@ const NewsType = () => {
     loading,
     dataSource,
     pagination,
-    sortInfo,
+    // sortInfo,
     handleTableChange,
     handleSearch,
     handleDelete,
