@@ -7,7 +7,6 @@ import { RouterProvider } from 'react-router-dom'
 import { platformTheme } from '@/styles/antd-theme'
 import { router } from '@/router'
 import '@/styles/index.scss'
-import '@/mock/setup'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -15,12 +14,20 @@ const queryClient = new QueryClient({
   },
 })
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ConfigProvider locale={zhCN} theme={platformTheme}>
-        <RouterProvider router={router} />
-      </ConfigProvider>
-    </QueryClientProvider>
-  </React.StrictMode>
-)
+const bootstrap = async () => {
+  if (import.meta.env.DEV) {
+    await import('@/mock/setup')
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')!).render(
+    <React.StrictMode>
+      <QueryClientProvider client={queryClient}>
+        <ConfigProvider locale={zhCN} theme={platformTheme}>
+          <RouterProvider router={router} />
+        </ConfigProvider>
+      </QueryClientProvider>
+    </React.StrictMode>
+  )
+}
+
+void bootstrap()

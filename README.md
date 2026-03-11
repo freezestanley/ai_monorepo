@@ -1,99 +1,128 @@
-# Turborepo Frontend Scaffold
+# ai_monorepo
 
-This is a monorepo project scaffold using Turborepo with two applications (admin and platform) and shared packages.
+一个基于 `pnpm workspace + Turborepo` 的前端 monorepo 脚手架，当前包含两个彼此独立运行的应用和两个共享包。
 
-## Project Structure
+## 当前定位
 
-```
+- `apps/admin`: 管理端独立应用
+- `apps/platform`: 用户端独立应用
+- `packages/ui`: 共享 UI 组件
+- `packages/utils`: 共享工具与示例 store
+
+本仓库当前已经完成一轮脚手架优化，但 `news` 业务模块只是临时迁移资产，后续会重新迁移。  
+因此，当前推荐把这里理解为“可继续演进的双应用脚手架”，而不是稳定的 `news` 业务基线。
+
+## 架构原则
+
+- `admin` 与 `platform` 保持独立入口、独立路由、独立布局、独立主题、独立 HTTP 层
+- 只共享工具级和组件级能力，不合并运行时 app shell
+- mock 仅在开发环境启用，生产构建不再显式打包 mock 入口
+
+## 目录结构
+
+```text
+ai_monorepo/
 ├── apps/
-│   ├── admin/                 # Admin management application
+│   ├── admin/
 │   │   ├── src/
-│   │   │   ├── components/   # Reusable components
-│   │   │   ├── App.tsx       # Main application component
-│   │   │   └── main.tsx      # Application entry point
-│   │   ├── public/
+│   │   │   ├── api/
+│   │   │   ├── constants/
+│   │   │   ├── layouts/
+│   │   │   ├── mock/
+│   │   │   ├── pages/
+│   │   │   ├── router/
+│   │   │   ├── styles/
+│   │   │   ├── main.tsx
+│   │   │   └── vite-env.d.ts
 │   │   ├── package.json
+│   │   ├── postcss.config.js
+│   │   ├── tailwind.config.js
 │   │   ├── tsconfig.json
 │   │   └── vite.config.ts
-│   └── platform/              # Platform user-facing application
+│   └── platform/
 │       ├── src/
-│       │   ├── components/   # Reusable components
-│       │   ├── App.tsx       # Main application component
-│       │   └── main.tsx      # Application entry point
-│       ├── public/
+│       │   ├── api/
+│       │   ├── constants/
+│       │   ├── layouts/
+│       │   ├── mock/
+│       │   ├── pages/
+│       │   ├── router/
+│       │   ├── styles/
+│       │   ├── main.tsx
+│       │   └── vite-env.d.ts
 │       ├── package.json
+│       ├── postcss.config.js
+│       ├── tailwind.config.js
 │       ├── tsconfig.json
 │       └── vite.config.ts
 ├── packages/
-│   ├── ui/                   # Shared UI components
-│   │   ├── Button.tsx
-│   │   └── index.tsx
-│   └── utils/                # Shared utilities and stores
-│       ├── index.ts
-│       └── store.ts
-├── package.json             # Root package.json with turborepo config
-├── turbo.json               # Turborepo configuration
-└── README.md
+│   ├── ui/
+│   └── utils/
+├── docs/plans/
+├── package.json
+├── pnpm-workspace.yaml
+└── turbo.json
 ```
 
-## Tech Stack
+## 技术栈
 
-- **Monorepo**: [Turborepo](https://turbo.build/)
-- **Framework**: [React](https://reactjs.org/) (v18+)
-- **Runtime**: [Vite](https://vitejs.dev/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
-- **Styling**: CSS Modules (can be extended with Tailwind, Styled Components, etc.)
+- React 18
+- TypeScript 5
+- Vite 4
+- Turborepo
+- Ant Design 5
+- React Router 6
+- Axios
+- MockJS
+- Sass
+- ESLint
 
-## Getting Started
+## 开发命令
 
-1. Install dependencies:
-   ```bash
-   pnpm install
-   ```
+安装依赖:
 
-2. Run the development servers:
-   ```bash
-   pnpm dev
-   ```
+```bash
+pnpm install
+```
 
-   This will start both the admin (port 3000) and platform (port 3001) applications.
+启动所有应用:
 
-3. Build for production:
-   ```bash
-   pnpm build
-   ```
+```bash
+pnpm dev
+```
 
-## Scripts
+构建所有应用:
 
-- `pnpm dev` - Start development servers for all apps
-- `pnpm build` - Build all packages and apps
-- `pnpm lint` - Lint all packages and apps
-- `pnpm format` - Format all code
+```bash
+pnpm build
+```
 
-## Applications
+运行 lint:
 
-### Admin Application (`apps/admin`)
-- Port: 3000
-- Purpose: Administrative dashboard and management tools
-- Features example components for managing users, content, and settings
+```bash
+pnpm lint
+```
 
-### Platform Application (`apps/platform`)
-- Port: 3001
-- Purpose: User-facing application
-- Features example components for user interaction and content consumption
+## 当前脚手架状态
 
-## Shared Packages
+### 已完成
 
-### UI Package (`packages/ui`)
-Reusable UI components that can be used across both applications.
+- 根级 ESLint 工具链可运行
+- `postcss.config.js` 模块类型告警已清理
+- mock 改为仅开发环境启用
+- `admin` 与 `platform` 仍保持独立运行
 
-### Utils Package (`packages/utils`)
-Shared utility functions and state management stores using Zustand.
+### 已知现状
 
-## Development
+- `pnpm lint` 当前可通过，但仍会输出 warnings
+- warnings 主要集中在 `news` 临时迁移代码和共享示例代码
+- `news` 模块后续会重新迁移，因此本轮没有清理其业务 warnings
 
-- Code in `packages/*` is shared between applications
-- Changes to shared packages automatically trigger rebuilds of dependent apps
-- Each application maintains its own dependencies while sharing common components
-- Use the same coding standards across all packages and applications# ai_monorepo
+## 分析文档
+
+分析结果见:
+
+- `.claude/analysis/index.md`
+- `.claude/analysis/project_summary.md`
+- `.claude/analysis/scaffold.md`
+- `.claude/analysis/refactor_roadmap.md`

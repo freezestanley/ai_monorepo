@@ -13,7 +13,7 @@ interface CounterStore {
 // Create a reusable counter store with persistence
 export const useCounterStore = create<CounterStore>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       count: 0,
       increment: () => set((state) => ({ count: state.count + 1 })),
       decrement: () => set((state) => ({ count: state.count - 1 })),

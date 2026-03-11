@@ -3,12 +3,15 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react()],
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
+    alias: [
+      ...(command === 'build'
+        ? [{ find: '@/mock/setup', replacement: path.resolve(__dirname, './src/mock/noop.ts') }]
+        : []),
+      { find: '@', replacement: path.resolve(__dirname, './src') },
+    ],
   },
   css: {
     preprocessorOptions: {
@@ -24,4 +27,4 @@ export default defineConfig({
   build: {
     outDir: './dist',
   },
-})
+}))
