@@ -221,7 +221,7 @@ export default function BotPage() {
 
   // 页面跳转
   const handleCreateBot = () => {
-    navigate("/addBot")
+    navigate("/admin/addBot")
   }
 
   const handleSortChange = (pagination, filters, sorter) => {

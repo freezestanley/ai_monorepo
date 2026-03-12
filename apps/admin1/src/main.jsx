@@ -89,7 +89,7 @@ const Root = () => {
                 <ExtractorProvider>
                   <Suspense fallback={null}>
                     <NiceModal.Provider>
-                      <DifyModal
+                      {/* <DifyModal
                         visible={difyModalVisible}
                         onClickTryDify={() => {
                           setDifyModalVisible(false)
@@ -97,7 +97,7 @@ const Root = () => {
                         onClose={() => {
                           setDifyModalVisible(false)
                         }}
-                      />
+                      /> */}
                       <Global styles={GlobalAntdStyles} />
                       <RouterProvider router={globalRouters} />
                     </NiceModal.Provider>
