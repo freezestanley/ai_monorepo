@@ -1,0 +1,10 @@
+.resizableLayout {
+  height: 100%;
+  :global {
+    .split-view-view {
+      &::before {
+        width: 0px !important;
+      }
+    }
+  }
+}

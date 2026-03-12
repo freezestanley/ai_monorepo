@@ -1,0 +1,120 @@
+.extractor-card {
+  box-sizing: border-box;
+
+  margin-bottom: 20px;
+  .extractor-container {
+    box-sizing: border-box;
+
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f7f8fa;
+  }
+
+  .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    > div:first-child {
+      font-size: 14px;
+      font-weight: bold;
+      position: relative;
+    }
+    > div:first-child::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 5px;
+      height: 20px;
+      border-radius: 30px;
+      background: #7F56D9;
+      left: -15px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: 3;
+    }
+    :global {
+      .ant-btn {
+        margin-left: 15px;
+      }
+    }
+  }
+  .type-radio {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 60px;
+    :global {
+      .ant-btn {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .card {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+  }
+}
+.form {
+  :global {
+    .ant-form-item-label {
+      width: 100px;
+      font-weight: bold;
+    }
+  }
+}
+.same-questons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  :global {
+    .ant-btn {
+      margin-left: 15px;
+    }
+  }
+}
+
+.same-questions-list {
+  max-height: 500px;
+  overflow-y: auto;
+  width: 300px;
+  .line {
+    font-size: 12px;
+    line-height: 30px;
+    border-bottom: 1px solid #eee;
+    color: #666;
+  }
+}
+.sec-container {
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  padding: 20px 20px 0 20px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card-type-1 {
+  .match-item {
+    :global {
+      .ant-form-item-label {
+        padding-top: 12px;
+      }
+    }
+  }
+}
+
+.empty {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.card-optimal-type {
+  box-sizing: border-box;
+  padding: 0 20px;
+}

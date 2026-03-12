@@ -1,0 +1,84 @@
+.tag {
+  border-radius: 90px !important;
+  display: inline-flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    display: block;
+    margin-right: 8px;
+  }
+  &.tag-blue {
+    border-color: #c0d5ff;
+    background: #ebf1ff;
+    color: #2547d0;
+    &::before {
+      background: #2547d0;
+    }
+  }
+  &.tag-yellow {
+    border-color: #ffecc0;
+    background: #fffaeb;
+    color: #c99a2c;
+    &::before {
+      background: #c99a2c;
+    }
+  }
+  &.tag-red {
+    border-color: #ffc0c5;
+    background: #ffebec;
+    color: #d02533;
+    &::before {
+      background: #d02533;
+    }
+  }
+  &.tag-green {
+    border-color: #c2f5da;
+    background: #e0faec;
+    color: #178c4e;
+    &::before {
+      background: #178c4e;
+    }
+  }
+  &.tag-default {
+    border-color: #e1e4ea;
+    background: #f5f7fa;
+    color: #525866;
+    &::before {
+      background: #525866;
+    }
+  }
+}
+
+.table-disbaled {
+  :global {
+    .ant-table-tbody {
+      opacity: 0.5;
+      .ant-btn {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.modalInfo {
+  :global {
+    .ant-modal-content {
+      padding: 24px 32px;
+      .anticon-info-circle {
+        color: #7f56d9;
+      }
+      .ant-modal-confirm-title {
+        color: #181b25;
+        font-size: 16px;
+      }
+      .ant-modal-confirm-content {
+        font-size: 14px;
+        color: #475467;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+/* 清理旧的 Modal 特定样式 */
+/* .modalContainer, .sidebar, .content, .section 已通过 Tailwind 移除 */
+
+.createVoiceModal {
+  /* 表单项 tooltip 样式 */
+  .ant-form-item-tooltip {
+    color: rgba(0, 0, 0, 0.45);
+  }
+
+  /* 必填星号旁边的提示文字 */
+  .required-text {
+    color: #ff4d4f;
+  }
+
+  /* Drawer 右侧导航 Tabs 的特定样式 */
+  .create-voice-drawer-tabs {
+    /* background-color: white; /* 确保 Tabs 容器背景为白色 */
+    /* border-left: 1px solid #f0f0f0; /* 左侧分割线，如果 Tabs 容器自己不带 */
+
+    &.ant-tabs-right > .ant-tabs-nav {
+      /* antd 可能会给nav区域添加不必要的padding或margin，根据需要重置 */
+      padding: 0;
+      margin: 0;
+      /* background-color: white; /* Nav区域背景 */
+    }
+
+    .ant-tabs-tab {
+      margin: 0 !important; /* 覆盖 antd 默认 margin */
+      padding: 14px 16px !important; /* 调整内边距以匹配设计 (上下14px, 左右16px) */
+      text-align: left !important; /* 文本左对齐 */
+      font-size: 14px !important;
+      width: 100%; /* 确保标签页撑满导航区宽度 */
+      border-bottom: 1px solid #f0f0f0; /* 标签页之间的分割线 */
+
+      .ant-tabs-tab-btn {
+        color: #595959; /* 非活动状态文字颜色 (深灰色) */
+        text-align: left;
+        width: 100%;
+        font-weight: normal;
+      }
+
+      &.ant-tabs-tab-active {
+        background-color: #f3e8ff !important; /* 活动标签页背景色 (浅紫色) */
+        border-right: 2px solid #7b3edb; /* 活动状态右侧的强调边框 */
+        .ant-tabs-tab-btn {
+          color: #7b3edb !important; /* 活动标签页文字颜色 (品牌紫色) */
+          font-weight: 500; /* 活动标签文字加粗 */
+        }
+      }
+
+      &:hover:not(.ant-tabs-tab-active) {
+        background-color: #f9f5ff !important; /* Hover 非活动标签页背景色 (更浅的紫色) */
+        .ant-tabs-tab-btn {
+          color: #7b3edb !important; /* Hover 非活动标签页文字颜色 */
+        }
+      }
+
+      &:last-child {
+        border-bottom: none; /* 移除最后一个标签页的下边框 */
+      }
+    }
+
+    .ant-tabs-ink-bar {
+      display: none !important; /* 隐藏指示条 */
+    }
+  }
+}

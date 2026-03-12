@@ -1,0 +1,30 @@
+.agent-voice-custom-tabs {
+  .ant-tabs-nav {
+    &::before {
+      border-bottom: none !important;
+    }
+
+    .ant-tabs-tab {
+      padding: 8px 0;
+      padding-bottom: 15px;
+      padding-top: 0px;
+
+      .ant-tabs-tab-btn {
+        display: flex;
+        align-items: center;
+
+        i {
+          margin-right: 6px;
+        }
+      }
+    }
+
+    .ant-tabs-ink-bar {
+      background-color: #7f56d9;
+    }
+  }
+
+  .ant-tabs-tab-icon {
+    margin-inline-end: 0px !important;
+  }
+}

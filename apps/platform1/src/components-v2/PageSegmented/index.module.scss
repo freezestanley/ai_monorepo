@@ -1,0 +1,37 @@
+.segmented {
+  box-sizing: border-box;
+  :global {
+    .ant-segmented-item {
+      border-radius: var(--radius-s);
+      --tw-text-opacity: 1;
+      transition-property: background-color, color;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+      &:not(.ant-segmented-item-selected) {
+        &::after {
+          display: none;
+        }
+        &:hover {
+          .ant-segmented-item-label {
+            color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+          }
+        }
+      }
+      .ant-segmented-item-label {
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+        .ant-segmented-item-icon {
+          width: 18px;
+          height: 18px;
+          font-size: 18px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}

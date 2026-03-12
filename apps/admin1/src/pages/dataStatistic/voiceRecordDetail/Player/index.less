@@ -1,0 +1,221 @@
+.playerContainer {
+  border-radius: 8px;
+  background-color: #fff;
+  width: 100%;
+  margin-bottom: 8px;
+  color: #1d2129;
+  .title {
+    padding: 0 16px;
+    color: #1d2129;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border-bottom: 1px solid #eff1f4;
+    margin-bottom: 5px;
+  }
+  .actions {
+    padding: 0 16px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    .actionLeft,
+    .actionRight {
+      display: flex;
+      align-items: center;
+    }
+    @media (min-width: 1200px) {
+      .actionRight {
+        justify-content: flex-end;
+      }
+    }
+    .actionIconContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 6px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .actionIcon {
+      width: 16px;
+      height: 16px;
+    }
+    .audioTime {
+      font-size: 12px;
+      color: #4e5969;
+      font-weight: 500;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+  .speed {
+    margin-right: 12px;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #4e5969;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+      background: #f2f2fe;
+    }
+  }
+
+  .progress {
+    padding: 8px 16px 0;
+    .ant-slider-rail {
+      border-radius: 8px;
+    }
+    .ant-slider-track {
+      border-radius: 8px;
+    }
+    .ant-slider-horizontal {
+      margin-bottom: 4px;
+    }
+    .ant-slider {
+      margin: 0 0 0 8px;
+      &:hover {
+        .ant-slider-handle {
+          &::after {
+            box-shadow: 0 0 0 1px #7052f0;
+          }
+        }
+      }
+    }
+    .player-key-point {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f97316;
+      transform: translateY(-21px);
+      cursor: pointer;
+      box-shadow: 0 0 0 2px #fff;
+    }
+  }
+  .line {
+    background-color: #7f56d9;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .currentProgress {
+    background-color: #000;
+    width: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    cursor: ew-resize;
+  }
+}
+
+.speedPop {
+  .ant-popover-inner {
+    padding: 8px !important;
+    .ant-radio-group {
+      .ant-radio-button-wrapper {
+        &::before {
+          display: none;
+        }
+        border: none;
+        height: 18px;
+        width: 42px;
+        padding: 0;
+        line-height: 18px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #1d2129;
+        &.ant-radio-button-wrapper-disabled {
+          background: none;
+          color: #c9cdd4 !important;
+        }
+        &.ant-radio-button-wrapper-checked {
+          color: #7f56d9;
+        }
+      }
+    }
+    .ant-checkbox-wrapper {
+      margin-top: 10px;
+      padding-left: 6px;
+      font-size: 12px;
+      color: #181b25;
+    }
+    .ant-slider {
+      margin: 4px 10px 0;
+      .ant-slider-handle {
+        &::after {
+          background: #7f56d9;
+        }
+      }
+      &.ant-slider-disabled {
+        .ant-slider-handle {
+          &::after {
+            background: #babec4;
+            box-shadow: 0 0 0 1px #babec4;
+          }
+        }
+        .ant-slider-rail {
+          background: #eff1f4 !important;
+        }
+        .ant-slider-track {
+          background: #e7e7eb !important;
+        }
+      }
+    }
+  }
+}
+.volumePop {
+  .ant-popover-inner {
+    min-width: 21px;
+    padding: 4px 5px 10px !important;
+  }
+}
+
+.volume {
+  min-width: 16px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & > span {
+    color: #4e5969;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .ant-slider {
+    flex: 1;
+    margin: 0 !important;
+    .ant-slider-handle {
+      background: #fff;
+      &::after {
+        background: #7f56d9;
+      }
+    }
+  }
+}
+.volumeIcon {
+  cursor: pointer;
+  margin-right: 12px;
+  padding: 4px;
+  border-radius: 4px;
+  &:hover {
+    background: #f2f2fe;
+  }
+}
+.downloadIcon {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  &:hover {
+    background: #f2f2fe;
+  }
+}

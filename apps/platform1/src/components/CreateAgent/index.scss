@@ -1,0 +1,33 @@
+.required-label::before {
+  content: "*";
+  color: #ff4d4f;
+  margin-right: 4px;
+}
+
+.ant-upload.ant-upload-select {
+  width: 100px !important;
+  height: 100px !important;
+  margin: 0;
+  background: #fafafa;
+  border: 1px dashed #d9d9d9;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #1890ff;
+  }
+}
+
+.ant-form-item-label > label {
+  font-weight: 500;
+}
+
+.small-upload-card {
+  .ant-upload {
+    width: 56px !important;
+    height: 56px !important;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+}

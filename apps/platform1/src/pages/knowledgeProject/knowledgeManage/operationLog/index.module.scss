@@ -1,0 +1,85 @@
+.search-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.breadcrumb {
+  font-size: 20px;
+  font-weight: 700;
+
+  a {
+    height: initial;
+  }
+}
+
+.logViewList {
+  font-size: 14px;
+
+  li {
+    display: flex;
+
+    &.logViewListItem {
+      flex-direction: column;
+
+      & > h1 {
+        margin-bottom: 10px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      &::after {
+        content: "：";
+      }
+
+      width: 15%;
+    }
+  }
+
+  .logViewContent {
+    flex: 1;
+    border: 1px solid #f7f8fa;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    .logViewContentRow {
+      background: #f7f8fa;
+      margin-bottom: 10px;
+
+      :global {
+        .ant-col {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+
+          h1 {
+            width: initial;
+            white-space: nowrap;
+          }
+
+          &:first-child {
+            h1 {
+              margin-left: 10px;
+            }
+          }
+
+          &:last-child {
+            span {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .logViewContentItem {
+      display: flex;
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+  }
+}

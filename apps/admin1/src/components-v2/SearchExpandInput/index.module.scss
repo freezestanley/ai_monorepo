@@ -1,0 +1,104 @@
+.root {
+  --collapsedWidth: 40px;
+  --expandedWidth: 220px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  border-radius: var(--radius-m);
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb; // gray-200
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  box-shadow:
+    var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  padding: 0 8px;
+  cursor: text;
+  position: relative;
+  overflow: hidden;
+  will-change: width, background-color, border-color;
+  transition:
+    width 560ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 360ms ease,
+    border-color 360ms ease,
+    box-shadow 360ms ease,
+    padding-left 560ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:hover,
+  &:focus-within,
+  &:has(:global(.ant-input[placeholder]:not(:placeholder-shown))) {
+    width: var(--expandedWidth);
+    justify-content: flex-start;
+    padding-left: 48px; // 48px icon area
+    background-color: #ffffff;
+    border-color: var(--primary-color);
+
+    .icon {
+      color: var(--primary-color);
+    }
+    --tw-shadow: 0 6px 16px rgba(17, 24, 39, 0.12);
+    box-shadow:
+      var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+
+    .icon {
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.icon {
+  font-size: 20px;
+  color: #6b7280; // gray-500
+  flex-shrink: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition:
+    color 300ms ease,
+    left 560ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.input {
+  margin-left: 0;
+  border: none;
+  outline: none;
+  box-shadow: none !important;
+  background: transparent;
+  width: 0;
+  opacity: 0;
+  pointer-events: none;
+  color: #111827; // gray-900
+  font-size: 14px;
+  line-height: 1;
+  will-change: opacity, width;
+  transition:
+    opacity 380ms ease 120ms,
+    width 480ms cubic-bezier(0.22, 1, 0.36, 1) 80ms;
+
+  &::placeholder {
+    color: #9ca3af; // gray-400
+  }
+
+  // keep input within expanded content area, not overlapping icon
+  position: relative;
+  z-index: 1;
+}
+
+.root:hover .input,
+.root:focus-within .input,
+.root:has(:global(.ant-input[placeholder]:not(:placeholder-shown))) .input {
+  width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}

@@ -1,0 +1,16 @@
+.search-box {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.hierarchy-form-item {
+  :global {
+    .ant-form-item-row {
+      flex-direction: column;
+
+      .ant-form-item-label {
+        text-align: left;
+      }
+    }
+  }
+}

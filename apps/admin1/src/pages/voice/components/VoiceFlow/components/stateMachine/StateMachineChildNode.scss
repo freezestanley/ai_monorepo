@@ -1,0 +1,69 @@
+.state-machine-child-node {
+  // 继承普通节点的所有样式，不需要额外的样式
+  // 如果需要特殊样式，可以在这里添加
+
+  // 为状态机子节点的连接点设置正确的位置
+  .react-flow__handle-target {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin-left: 0 !important;
+
+    // 当节点在左侧时，连接点在右侧
+    &[data-handlepos="right"] {
+      right: -4px !important;
+      left: auto !important;
+    }
+
+    // 当节点在右侧时，连接点在左侧
+    &[data-handlepos="left"] {
+      left: -4px !important;
+      right: auto !important;
+    }
+  }
+
+  // 删除按钮样式 - 与普通节点完全保持一致
+  .delete-button {
+    color: #ff4d4f;
+    cursor: pointer;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    z-index: 10;
+
+    &:hover {
+      background: rgba(255, 77, 79, 0.1);
+      transform: scale(1.1);
+    }
+
+    .iconfont {
+      font-size: 16px;
+    }
+  }
+
+  .react-flow__handle-left {
+    transform: translate(-50%, 0);
+    width: 10px;
+    height: 20px;
+    border-radius: 4px !important;
+    background: #7f56d9;
+    z-index: 10;
+    left: 18px;
+    top: calc(50% - 10px);
+  }
+  .react-flow__handle-right {
+    transform: translate(-50%, 0);
+    width: 10px;
+    height: 20px;
+    border-radius: 4px !important;
+    background: #7f56d9;
+    z-index: 10;
+    right: 9px;
+    top: calc(50% - 10px);
+  }
+}

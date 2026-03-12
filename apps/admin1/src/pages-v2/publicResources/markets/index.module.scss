@@ -1,0 +1,32 @@
+.segmented-agent {
+  :global {
+    .ant-segmented-item-selected {
+      background: rgb(223 88 165 / 10%);
+      .ant-segmented-item-label {
+        color: #df58a5;
+      }
+    }
+  }
+}
+
+.segmented-workflow {
+  :global {
+    .ant-segmented-item-selected {
+      background: rgb(140 85 236 / 10%);
+      .ant-segmented-item-label {
+        color: #8c55ec;
+      }
+    }
+  }
+}
+
+.segmented-tool {
+  :global {
+    .ant-segmented-item-selected {
+      background: rgb(31 161 143 / 10%);
+      .ant-segmented-item-label {
+        color: #1fa18f;
+      }
+    }
+  }
+}

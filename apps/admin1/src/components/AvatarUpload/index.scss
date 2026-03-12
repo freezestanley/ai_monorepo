@@ -1,0 +1,131 @@
+$primary-color: #5e5ff8;
+
+.uploadAvatar {
+  .open-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    background-color: #f7f7f7;
+    position: relative;
+
+    &.selected {
+      background-color: var(--ant-primary-color);
+
+      &::after {
+        background-image: url(https://cdn.zaticdn.com/if/zaip-toolweb-seagull-httpsvr/if/2023-08-28/clluyosfh00py2gtg39449ded_plus.png);
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      background-image: url(https://cdn.zaticdn.com/if/zaip-toolweb-seagull-httpsvr/if/2023-08-28/clluy9m3n00px2gtgg8r30npv_%E5%8A%A0%E5%8F%B7.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .ant-modal-content {
+    width: 480px;
+    min-height: 296px;
+    border-radius: 20px;
+    padding: 27px 40px 38px !important;
+    position: relative;
+
+    .ant-modal-title {
+      font-size: 19px;
+      color: #181b25;
+    }
+
+    .ant-modal-close {
+      top: 20px;
+      right: 46px;
+    }
+
+    .ant-modal-body .content {
+      padding-top: 46px;
+      text-align: center;
+
+      .preview-title {
+        font-size: 18px;
+        font-weight: 700;
+        padding: 20px 0;
+        text-align: left;
+      }
+
+      .avator-preview {
+        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+      }
+
+      .upload-button {
+        padding: 12px 22px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $primary-color;
+        border-radius: 0;
+      }
+
+      .upload-label {
+        font-size: 16px;
+        font-weight: 700;
+        color: $primary-color;
+        line-height: 22px;
+        padding-left: 8px;
+      }
+
+      .upload-tip {
+        padding-top: 14px;
+        padding-left: 8px;
+        font-weight: 400;
+        color: #999999;
+        line-height: 20px;
+      }
+    }
+
+    .ant-modal-footer {
+      margin-top: 42px;
+    }
+  }
+
+  .crop-wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    max-width: 100vw;
+    max-height: 100vh;
+    min-width: 80px;
+    min-height: 140px;
+
+    .button {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      margin-left: -32px;
+    }
+
+    .ReactCrop__drag-handle {
+      &.ord-s,
+      &.ord-n,
+      &.ord-e,
+      &.ord-w {
+        display: none;
+      }
+    }
+
+    .ReactCrop__child-wrapper img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+}

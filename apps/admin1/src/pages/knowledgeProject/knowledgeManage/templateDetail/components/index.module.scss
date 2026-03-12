@@ -1,0 +1,208 @@
+$primary-color: #7F56D9;
+
+.draggable-bottom-box {
+  position: absolute;
+  bottom: 30px;
+  left: calc(50% - 300px);
+  cursor: grab;
+  z-index: 1001;
+
+  .box-content {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 600px;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    visibility: hidden;
+
+    &.hide {
+      animation-name: slideOut;
+    }
+
+    &.show {
+      animation-name: slideIn;
+    }
+
+    @keyframes slideOut {
+      from {
+        transform: translate(0, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+      to {
+        transform: translate(0, 100%);
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translate(0, 100%);
+        opacity: 0;
+        visibility: hidden;
+      }
+      to {
+        transform: translate(0, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .header-box {
+      padding: 5px 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      font-size: 12px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+
+      & > span {
+        text-align: center;
+        margin-right: 10px;
+      }
+
+      :global {
+        .ant-btn {
+          margin-left: 8px;
+        }
+
+        .anticon-close {
+          position: absolute;
+          right: 0;
+          top: 8px;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .content-box {
+      padding: 5px 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      .left-box {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        :global {
+          .ant-tag {
+            text-align: center;
+            line-height: 14px;
+            padding: 6px 16px;
+            min-width: 65px;
+
+            &:first-child {
+              margin-left: 10px;
+            }
+
+            .ant-tag-close-icon {
+              position: absolute;
+              right: -4px;
+              top: -4px;
+              font-size: 12px;
+              color: red;
+              padding: 4px;
+            }
+          }
+        }
+      }
+
+      .right-box {
+        :global {
+          .ant-btn {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.operation-box {
+  position: fixed;
+  right: 10px;
+  top: 6%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 5px;
+  border-radius: 4px;
+
+  & > * {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  :global {
+    .anticon-product {
+      color: $primary-color;
+      font-size: 18px;
+    }
+  }
+
+  .orange {
+    &:not(:disabled) {
+      background: #fff7e6;
+      color: #d46b08;
+
+      &:active,
+      &:hover {
+        background: #d46b08;
+      }
+    }
+  }
+
+  .cyan {
+    &:not(:disabled) {
+      color: #08979c;
+      background: #e6fffb;
+
+      &:active,
+      &:hover {
+        background: #08979c;
+      }
+    }
+  }
+
+  .processing {
+    &:not(:disabled) {
+      color: #1677ff;
+      background: #e6f4ff;
+
+      &:active,
+      &:hover {
+        background: #1677ff;
+      }
+    }
+  }
+}
+
+.move-form-item {
+  :global {
+    .ant-form-item-control-input-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .anticon {
+        margin-left: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    }
+  }
+}

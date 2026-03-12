@@ -1,0 +1,72 @@
+.list {
+  .title {
+    font-size: 14px;
+    color: #181b25;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .content {
+    font-size: 14px;
+    color: #475467;
+    padding: 4px 16px 4px 0;
+    line-height: 20px;
+  }
+  .number {
+    font-size: 48px;
+    color: #e1e4ea;
+    font-family: ZA Metric Mono;
+    position: absolute;
+    left: 8px;
+    bottom: 0;
+  }
+  .contentImg {
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    right: 6px;
+    bottom: 4.5px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .lastItem {
+    border: none !important;
+  }
+  :global {
+    .ant-list-item {
+      padding-left: 8px;
+      height: 220px;
+      background: url("../../../../assets/img/version/note-bg.png") no-repeat left bottom;
+      background-size: 100% 99px;
+      box-sizing: border-box;
+      border-right: 1px solid transparent;
+      border-image: linear-gradient(180deg, #ffffff 0%, #e1e4ea 100%) 1;
+    }
+  }
+}
+.alert {
+  padding: 8px 12px;
+  border: none;
+  background: #fff1eb;
+  border-radius: 8px;
+  .alertText {
+    border-bottom: 1.4px solid #ff8447;
+    box-sizing: border-box;
+  }
+  :global {
+    .ant-alert-icon {
+      font-size: 16px;
+      color: #ff8447;
+      margin-right: 8px;
+    }
+    .ant-alert-content {
+      color: #181b25;
+      font-size: 12px;
+      .ant-alert-message {
+        margin-bottom: 8px;
+        font-size: 12px;
+      }
+    }
+  }
+}

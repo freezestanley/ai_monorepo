@@ -1,0 +1,33 @@
+$primary-color: #7F56D9;
+
+.search-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.breadcrumb {
+  font-size: 20px;
+  font-weight: 700;
+
+  a {
+    height: initial;
+  }
+}
+
+.contentWrapper {
+  display: flex;
+
+  :global {
+    .tree-wrapper {
+      background: #fff;
+      padding-left: 10px;
+      max-height: calc(100vh - 230px);
+      height: calc(100vh - 230px);
+      border-radius: 10px;
+    }
+    .table-wrapper {
+      max-height: calc(100vh - 230px);
+      height: calc(100vh - 230px);
+    }
+  }
+}

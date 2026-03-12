@@ -1,0 +1,107 @@
+.rs-input-group {
+  border-radius: 8px;
+}
+.rs-picker-daterange-header {
+  color: #737373;
+}
+.rs-input-group:not(.rs-input-group-disabled):hover,
+.rs-input-group:not(.rs-input-group-disabled).rs-input-group-focus,
+.rs-input-group:focus-within {
+  border-color: #7f56d9;
+}
+
+.rs-input-group:not(.rs-input-group-disabled).rs-input-group-focus,
+.rs-input-group:focus-within {
+  outline: none;
+}
+
+.rs-calendar-table-cell-selected .rs-calendar-table-cell-content {
+  background-color: #7f56d9;
+}
+.rs-calendar-table-cell-in-range::before {
+  background-color: #f3eefd;
+}
+.rs-calendar-table-cell-content:hover {
+  background-color: #dfcfff;
+}
+.rs-picker-popup .rs-calendar .rs-calendar-table-cell:hover .rs-calendar-table-cell-content {
+  color: #7f56d9;
+}
+.rs-picker-popup .rs-calendar .rs-calendar-table-cell:hover .rs-calendar-table-cell-content {
+  background-color: #dfcfff;
+}
+.rs-btn-primary {
+  background-color: #7f56d9;
+}
+.rs-btn-primary:hover,
+.rs-btn-primary:focus {
+  background-color: #7f56d9;
+}
+.rs-btn-primary:disabled,
+.rs-btn-primary.rs-btn-disabled {
+  background-color: #7f56d9;
+}
+.rs-btn-link {
+  color: #7f56d9;
+}
+.rs-calendar-table-cell-is-today .rs-calendar-table-cell-content {
+  box-shadow: inset 0 0 0 1px #7f56d9;
+}
+.rs-picker-popup
+  .rs-calendar
+  .rs-calendar-table-cell-selected:hover
+  .rs-calendar-table-cell-content {
+  background-color: #7f56d9;
+  color: #fff;
+}
+.rs-calendar-time-dropdown-cell.rs-calendar-time-dropdown-cell-active {
+  background-color: #7f56d9;
+  border-radius: 4px;
+}
+.rs-calendar-time-dropdown-cell:hover {
+  background-color: #dfcfff;
+  color: #7f56d9;
+  border-radius: 4px;
+}
+.rs-calendar-time-dropdown-column > ul,
+.rs-calendar-time-dropdown-column > ul > li {
+  padding: 0 5px;
+}
+.rs-picker-popup
+  .rs-calendar
+  .rs-calendar-month-dropdown-cell-active
+  .rs-calendar-month-dropdown-cell-content:hover {
+  background-color: #7f56d9;
+}
+.rs-picker-popup .rs-calendar .rs-calendar-month-dropdown-cell-content:hover {
+  background-color: #dfcfff;
+  color: #7f56d9;
+}
+.rs-calendar-month-dropdown-year-active {
+  color: #7f56d9;
+}
+.rs-calendar-month-dropdown-cell-active .rs-calendar-month-dropdown-cell-content {
+  background-color: #7f56d9;
+}
+.rs-calendar-month-view .rs-calendar-header-title-date {
+  color: #7f56d9;
+}
+.rs-calendar-time-view .rs-calendar-header-title-time {
+  color: #7f56d9;
+}
+.rs-calendar-time-dropdown-cell {
+  padding: 2px;
+}
+.rs-btn-link:hover,
+.rs-btn-link:focus {
+  color: #7f56d9;
+}
+
+.rs-picker-header-date {
+  color: #474747;
+  background-color: #f4f4f4;
+  padding: 1px 3px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+}

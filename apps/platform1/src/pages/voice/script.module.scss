@@ -1,0 +1,122 @@
+// 话术管理页面样式
+.scriptContainer {
+  padding: 16px;
+  background-color: #fff;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .leftButtons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .importExportGroup {
+        display: flex;
+        align-items: center;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        padding: 0 8px;
+      }
+    }
+
+    .searchContainer {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .tableHeader {
+    background-color: #fafafa;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    border-left: 3px solid #faad14;
+
+    .tableTitle {
+      font-weight: 500;
+      color: #333;
+      font-size: 14px;
+    }
+  }
+
+  .ellipsisText {
+    max-width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // 详情弹窗样式
+  .scriptDetail {
+    .detailItem {
+      display: flex;
+      margin-bottom: 16px;
+
+      .detailLabel {
+        width: 100px;
+        color: #666;
+        flex-shrink: 0;
+      }
+
+      .detailValue {
+        color: #333;
+        flex: 1;
+        word-break: break-all;
+      }
+    }
+  }
+}
+
+// 自定义 Radio 组样式
+.customRadioGroup {
+  :global {
+    .ant-radio-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .ant-radio-wrapper {
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+      padding: 6px 12px;
+      margin-right: 0;
+      transition: all 0.3s;
+      background-color: #fff;
+
+      &:hover {
+        border-color: #7f56d9;
+        background-color: #f5f3ff;
+      }
+
+      &.ant-radio-wrapper-checked {
+        border-color: #7f56d9;
+        background-color: #f5f3ff;
+        color: #7f56d9;
+
+        .ant-radio-inner {
+          border-color: #7f56d9;
+          background-color: #7f56d9;
+        }
+
+        .ant-radio-inner::after {
+          background-color: #fff;
+        }
+      }
+
+      .ant-radio {
+        .ant-radio-inner {
+          border-color: #d9d9d9;
+
+          &:hover {
+            border-color: #7f56d9;
+          }
+        }
+      }
+    }
+  }
+}

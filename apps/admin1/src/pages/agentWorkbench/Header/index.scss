@@ -1,0 +1,26 @@
+.agent-tool-bar-wrapper {
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+  top: 0;
+  .skill-status {
+    color: var(--6, #ff7d00);
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 2px;
+    background: var(--1, #fff7e8);
+    display: inline-block;
+    padding: 4px 8px;
+  }
+}
+.agent-header-drawer-wrapper {
+  position: absolute;
+  height: calc(100vh - 51px);
+  width: 100%;
+  top: 49px;
+  overflow-y: auto;
+}
+.agent-command-wrapper-modal {
+  .ant-modal-content {
+    padding-top: 8px;
+  }
+}

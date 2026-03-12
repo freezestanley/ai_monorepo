@@ -1,0 +1,97 @@
+.extractor-search-box {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.extractor-detail-container {
+  box-sizing: border-box;
+  padding: 0 20px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  > div:first-child {
+    flex: none;
+    margin-right: 30px;
+  }
+  > div:last-child {
+    width: 100%;
+    max-height: 900px;
+    overflow-y: auto;
+    .extractor-title {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 50px;
+      box-sizing: border-box;
+      padding-left: 20px;
+    }
+  }
+}
+
+.extractor-detail-step {
+  .ant-btn:first-child {
+    margin-right: 20px;
+  }
+}
+
+.add-task-extractor {
+  &-container {
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #eee;
+  }
+  &-main {
+    max-width: 800px;
+    .ant-form-item-label {
+      width: 130px;
+      font-weight: bold;
+    }
+    .ant-space,
+    .ant-radio-group,
+    .ant-space-vertica {
+      width: 100%;
+    }
+  }
+  &-boxs {
+    margin-bottom: 30px;
+  }
+
+  &-type-item {
+    width: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+}
+
+.extractor-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  width: 100%;
+}
+.extractor-tool{
+  margin-top: 10px;
+  text-align: right;
+}
+.IntentionDrawer{
+  background-color: red;
+  .ant-drawer-header{
+    background-color: #f7f8fa;
+  }
+ 
+ 
+}
+#InstanceBatchExtractorDetail{
+  .ant-drawer-header{
+  background-color: #f7f8fa;
+  }
+  .ant-drawer-body{
+    padding: 12px;
+    }
+}

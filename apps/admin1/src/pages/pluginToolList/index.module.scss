@@ -1,0 +1,77 @@
+.plugin-tool-list {
+  padding: 12px 24px;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 36px;
+  padding: 12px 0;
+  &::after {
+    background-color: rgba(29,28,35,.08);
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: -24px;
+    position: absolute;
+    width: calc(100% + 48px);
+  }
+  .header-space {
+    display: flex;
+    align-items: center;
+  }
+  .plugin-img {
+    border-radius: 6px;
+    height: 36px;
+    width: 36px;
+  }
+  .plugin-info {
+    margin-left: 12px;
+    padding: 3px 0;
+    .info-top {
+      display: flex;
+      margin-bottom: 6px;
+    }
+    .edit-icon {
+      font-size: 16px;
+      color: #777;
+    }
+    .info-bot {
+      display: flex;
+    }
+  }
+  .plugin-name {
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    max-width: 300px;
+
+  }
+  .plugin-desc {
+    font-size: 14px;
+    color: rgba(28,29,35,.8);
+    line-height: 16px;
+    max-width: 300px;
+  }
+}
+
+.table-title {
+  line-height: 26px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.empty-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 120px;
+  button {
+    margin-top: 24px;
+  }
+}

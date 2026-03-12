@@ -1,0 +1,32 @@
+.upload-recording-btn {
+  .ant-upload {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    height: auto !important;
+
+    &:hover {
+      border: none !important;
+      background: transparent !important;
+    }
+  }
+
+  .ant-upload-drag {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+
+    &:hover {
+      border: none !important;
+      background: transparent !important;
+    }
+  }
+}
+.recordingItem {
+  .ant-upload.ant-upload-select {
+    height: auto !important;
+    width: auto !important;
+    border:none !important;
+    background: #fff !important;
+  }
+}

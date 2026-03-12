@@ -1,0 +1,44 @@
+// styles/StatusBadge.scss
+
+.statusBadge-wrapper {
+  padding: 0.02rem 0.45rem;
+  border-radius: 90px;
+  font-size: 12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  .ant-badge {
+    .ant-badge-status-dot {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  &.chunking {
+    background-color: #e6f7ff;
+    color: #178fff;
+    display: inline-block;
+    border: 1px solid #b8e0ff;
+  }
+
+  &.inUse {
+    display: inline-block;
+    background-color: #e0faec;
+    color: #178c4e;
+    border: 1px solid #c2f5da;
+  }
+
+  &.disabled {
+    display: inline-block;
+    background-color: #f5f7fa;
+    color: #525866;
+    border: 1px solid #e1e4ea;
+  }
+
+  &.abnormal {
+    display: inline-block;
+    color: #d02533;
+    border: 1px solid #ffc0c5;
+    background-color: #ffebec;
+  }
+}

@@ -1,0 +1,10 @@
+.segmented {
+  :global {
+    .ant-segmented-item-selected {
+      background: #fff7ed;
+      .ant-segmented-item-label {
+        color: #fb923c;
+      }
+    }
+  }
+}

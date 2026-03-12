@@ -1,0 +1,172 @@
+.vhcenter > ol {
+  justify-content: center;
+  align-items: center;
+}
+
+.info-edit-page {
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .form-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .form-section {
+      margin-bottom: 24px;
+
+      .ant-card-head {
+        .ant-card-head-title {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+
+      .ant-card-body {
+        padding: 20px;
+      }
+
+      // 最后一个卡片不需要下边距
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // 表单项样式
+    .ant-form-item {
+      margin-bottom: 20px;
+
+      .ant-form-item-label {
+        padding-bottom: 4px;
+
+        > label {
+          font-weight: 500;
+          color: #262626;
+
+          &.ant-form-item-required::before {
+            color: #ff4d4f;
+          }
+        }
+      }
+
+      .ant-form-item-extra {
+        color: #8c8c8c;
+        font-size: 12px;
+        margin-top: 4px;
+      }
+    }
+
+    // 输入框样式
+    .ant-input,
+    .ant-select-selector,
+    .ant-input-number {
+      border-radius: 6px;
+
+      &:hover {
+        border-color: #40a9ff;
+      }
+
+      &:focus,
+      &.ant-input-focused,
+      &.ant-select-focused .ant-select-selector {
+        border-color: #40a9ff;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+      }
+    }
+
+    // TextArea 样式
+    .ant-input {
+      font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+        sans-serif;
+      line-height: 1.6;
+    }
+
+    // 开关样式
+    .ant-switch {
+      &.ant-switch-checked {
+        background-color: #52c41a;
+      }
+    }
+
+    // 上传组件样式
+    .ant-upload.ant-upload-select-picture-card {
+      width: 120px;
+      height: 120px;
+      margin: 0;
+      border-radius: 6px;
+
+      .ant-upload {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .ant-upload-list-picture-card .ant-upload-list-item {
+      width: 120px;
+      height: 120px;
+      border-radius: 6px;
+    }
+
+    // 富文本编辑器容器
+    .rich-text-editor {
+      border-radius: 6px;
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: 1200px) {
+  .info-edit-page {
+    .form-wrapper {
+      padding: 0 16px;
+
+      .ant-col-16,
+      .ant-col-8 {
+        width: 100%;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .info-edit-page {
+    .page-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .form-wrapper {
+      padding: 0 8px;
+
+      .form-section .ant-card-body {
+        padding: 16px;
+      }
+
+      .ant-row > .ant-col {
+        margin-bottom: 16px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// 打印样式
+@media print {
+  .info-edit-page {
+    .page-header,
+    .form-section:last-child {
+      display: none;
+    }
+  }
+}

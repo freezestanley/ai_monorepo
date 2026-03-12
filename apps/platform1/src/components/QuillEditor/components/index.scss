@@ -1,0 +1,57 @@
+.rewrite-options {
+  position: relative;
+  min-width: 400px;
+
+  .rewrite-options-action {
+    position: absolute;
+    top: 40px;
+    left: 0;
+
+    .style {
+      width: 80px !important;
+    }
+
+  }
+
+}
+
+.action-bar-wrapper {
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid var(--main-1, #7F56D9);
+  background: #FFF;
+
+  .action-item {
+    color: #7F56D9;
+    font-weight: 500;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 40px;
+  }
+
+  .action-item:hover {
+    /* 这是一个深蓝色背景 */
+    color: #FFF;
+    /* 文字颜色设置为白色 */
+    border-radius: 4px;
+    background: var(--main-1, #7F56D9);
+  }
+
+}
+
+.ai-menu-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  color: #555;
+  margin-left: 10px;
+}
+
+.ai-submenu li.selected {
+  background-color: #e1e1e1;
+  color: #333;
+}

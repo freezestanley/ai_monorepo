@@ -1,0 +1,59 @@
+.voice-canvas-tabs {
+  .ant-tabs-nav {
+    margin-bottom: 0;
+  }
+
+  .ant-tabs-tab {
+    padding: 8px 16px;
+
+    &.ant-tabs-tab-active {
+      .ant-tabs-tab-btn {
+        color: #7f56d9;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .ant-tabs-content-holder {
+    padding: 0;
+  }
+
+  .ant-tabs-tabpane {
+    padding: 0;
+  }
+
+  // 错误状态的 tab 样式
+  .ant-tabs-tab .text-red-500 {
+    color: #ff4d4f !important;
+  }
+
+  // 错误指示点样式
+  .ant-tabs-tab .text-red-500 span {
+    font-size: 12px;
+    margin-left: 4px;
+  }
+}
+
+// 表单项间距优化
+.voice-canvas-tabs .ant-form-item {
+  margin-bottom: 16px;
+}
+
+// 自定义字段和通道配置卡片样式
+.voice-canvas-tabs .border.border-solid.border-gray-200 {
+  border-color: #e5e7eb;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: #d1d5db;
+  }
+}
+
+// 按钮样式优化
+.voice-canvas-tabs .ant-btn-link.text-purple-600 {
+  color: #7f56d9 !important;
+
+  &:hover {
+    color: #6d28d9 !important;
+  }
+}

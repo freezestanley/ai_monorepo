@@ -1,0 +1,15 @@
+.empty {
+  margin: 20px 0;
+  :global {
+    .ant-empty-image {
+      height: auto;
+    }
+    .ant-empty-description {
+      color: #666;
+    }
+  }
+  img {
+    width: 180px;
+    margin: 20px 0;
+  }
+}

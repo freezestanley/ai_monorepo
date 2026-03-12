@@ -1,0 +1,325 @@
+// 模型对比页面样式
+.compare-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  .compare-detail-header {
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 5px 24px;
+    flex-shrink: 0;
+
+    .back-button {
+      color: var(--primary-color);
+      
+      &:hover {
+        color: var(--primary-hover);
+      }
+    }
+
+    .header-info {
+      .series-title {
+        display: flex;
+        align-items: center;
+
+        .title-text {
+          font-size: 20px;
+          font-weight: 600;
+          color: var(--primary-color);
+          margin: 0;
+        }
+      }
+
+      .series-description {
+        color: #838383;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  // 模型卡片头部 - 横向三列，保证高度一致
+  .compare-header-section {
+    margin-bottom: 0;
+    padding: 0 16px 16px;
+    background: white;
+    flex-shrink: 0;
+    
+    .compare-card-item {
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #e7ebf1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+      min-height: 120px; // 保证高度一致
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      
+      &:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+        border-color: #1890ff;
+      }
+    }
+  }
+
+  .compare-content {
+    padding: 16px;
+    background: #ffffff;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+    
+    // 对比区域样式 - 横向三列
+    .compare-section {
+      margin-bottom: 16px;
+      position: relative;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      .section-header {
+        position: relative;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #d9d9d9;
+        
+        .section-title {
+          font-size: 14px;
+          font-weight: 500;
+          color: #595959;
+          margin: 0;
+          padding: 0;
+          border: none;
+        }
+      }
+      
+      .section-content {
+        .compare-data-item {
+          border-radius: 6px;
+          min-height: 120px;
+          border: none;
+          // margin-top: 8px;
+          
+          &.loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        
+        // 为能力雷达部分的compare-data-item添加flex居中
+        .evaluation-compare-item {
+          width: 100%;
+          padding: 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+    
+    // 移除所有卡片边框
+    .ant-card {
+      margin-bottom: 0;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+      
+      .ant-card-head {
+        background: transparent;
+        border-bottom: none;
+        min-height: auto;
+        padding: 0;
+        margin-bottom: 12px;
+        
+        .ant-card-head-title {
+          font-size: 16px;
+          font-weight: 600;
+          color: #262626;
+          padding: 0;
+          background: transparent;
+          border-radius: 0;
+        }
+      }
+      
+      .ant-card-body {
+        padding: 0;
+        background: transparent;
+      }
+    }
+  }
+  
+  // 下拉选择器样式
+  .ant-dropdown-trigger {
+    .ant-btn {
+      border: none;
+      box-shadow: none;
+      
+      &:hover {
+        background: #f5f7fa;
+      }
+    }
+  }
+}
+
+// 响应式设计 - 对比页面
+@media (max-width: 768px) {
+  .model-series-detail.compare-page {
+    .compare-content {
+      .compare-section {
+        .section-content {
+          .compare-data-item {
+            min-height: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .model-series-detail.compare-page {
+    .detail-header {
+
+      .header-info {
+        .series-title {
+          .title-text {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .compare-content {
+      padding: 0;
+    }
+  }
+}
+
+// 打印样式
+@media print {
+  .model-series-detail.compare-page {
+    background: #fff;
+    padding: 0;
+
+    .detail-header {
+      box-shadow: none;
+      border: 1px solid #d9d9d9;
+
+      .back-button {
+        display: none;
+      }
+    }
+
+    .compare-content {
+      .compare-data-item {
+        box-shadow: none;
+        border: 1px solid #d9d9d9;
+        margin-bottom: 16px;
+        break-inside: avoid;
+      }
+    }
+  }
+}
+
+// 搜索菜单项样式 - 移除悬停效果
+.search-menu-item {
+  background-color: transparent !important;
+  cursor: default !important;
+  
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+
+// 下拉菜单中的搜索项样式
+.ant-dropdown-menu {
+  .ant-dropdown-menu-item {
+    &.search-menu-item {
+      background-color: transparent !important;
+      cursor: default !important;
+      padding: 8px 12px !important;
+      
+      &:hover {
+        background-color: transparent !important;
+      }
+    }
+  }
+  
+  // 移除所有菜单项的悬停效果
+  .ant-dropdown-menu-item:hover {
+    background-color: transparent !important;
+  }
+}
+
+// 模型下拉项样式
+.model-dropdown-item {
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+
+// 搜索输入框样式
+.search-menu-item input {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  
+  &:focus {
+    box-shadow: none !important;
+  }
+  
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+
+// 简化下拉菜单样式
+.ant-dropdown {
+  .ant-dropdown-menu {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 4px !important;
+    
+    .ant-dropdown-menu-item {
+      &:hover {
+        background-color: transparent !important;
+      }
+      
+      &.model-dropdown-item {
+        padding: 8px 12px !important;
+        
+        &:hover {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+}
+
+// 进一步简化搜索框样式
+.search-menu-item {
+  input {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+    
+    &:focus {
+      box-shadow: none !important;
+      border: none !important;
+    }
+    
+    &:hover {
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+}

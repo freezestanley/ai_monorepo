@@ -1,0 +1,59 @@
+.table {
+  border-radius: var(--radius-l);
+  :global {
+    .ant-table {
+      border-radius: var(--radius-l) !important;
+      .ant-table-container {
+        border-start-start-radius: var(--radius-l);
+        border-start-end-radius: var(--radius-l);
+      }
+      table {
+        border-radius: var(--radius-l) var(--radius-l) 0 0;
+        .ant-table-thead {
+          .ant-table-filter-column {
+            justify-content: flex-start;
+            .ant-table-column-title {
+              flex: 0;
+              white-space: nowrap;
+            }
+          }
+          th {
+            background: white;
+            &:not(.ant-table-cell-fix-right) {
+              background: transparent;
+            }
+            padding: 20px 18px !important;
+            border-bottom: 1px solid rgb(249 250 251);
+            font-weight: bold;
+            color: rgb(156 163 175);
+            font-size: 14px;
+          }
+          tr:first-child > *:first-child {
+            border-start-start-radius: var(--radius-l);
+          }
+          tr:first-child > *:last-child {
+            border-start-end-radius: var(--radius-l);
+          }
+        }
+        .ant-table-tbody {
+          tr {
+            background: transparent !important;
+          }
+          .ant-table-cell {
+            padding: 16px 18px !important;
+            border-color: rgb(249 250 251 / 60%);
+            &:not(.ant-table-cell-fix-right) {
+              background: transparent;
+            }
+          }
+          tr:last-child > *:first-child {
+            border-end-start-radius: var(--radius-l);
+          }
+          tr:last-child > *:last-child {
+            border-end-end-radius: var(--radius-l);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.w-md-editor {
+  box-shadow: none !important;
+}
+
+// .w-md-editor-text-pre > code,
+// .w-md-editor-text-input {
+//   font-size: 14px !important;
+//   line-height: 1.6 !important;
+// }
+
+/* 标题样式 */
+.w-md-editor-text-input::selection {
+  background-color: rgba(105, 62, 224, 0.1) !important;
+}
+
+/* Markdown 语法高亮 */
+.w-md-editor-text-pre > code .token.title,
+.w-md-editor-text-pre > code .token.title.important,
+.w-md-editor-text-pre > code .token.title.important > .token.punctuation {
+  color: #693ee0 !important;
+  font-weight: 500 !important;
+}
+
+/* 普通文本颜色 */
+.w-md-editor-text-pre > code .token.paragraph,
+.w-md-editor-text-pre > code .token.list,
+.w-md-editor-text-pre > code .token.content,
+.w-md-editor-text-pre > code .token.text,
+.w-md-editor-text-pre > code .token.punctuation {
+  color: #475467 !important;
+}
+
+.w-md-editor-text {
+  background-color: #fff !important;
+  color: #475467 !important;
+}
+
+.w-md-editor-input {
+  background-color: #fff !important;
+  // scrollbar-width: none !important;
+ scrollbar-color: #f5f5f5 transparent;
+ scrollbar-width: thin;
+
+}
+
+.trainBtn {
+  &.ant-btn-loading {
+    color: #B692F6;
+  }
+}

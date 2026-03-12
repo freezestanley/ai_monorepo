@@ -1,0 +1,180 @@
+.ai-code-md-edit {
+  .w-md-editor-input {
+    background-color: transparent !important;
+  }
+  .w-md-editor-text {
+    background-color: transparent !important;
+    color: #181b25 !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    // max-height: 800px !important;
+  }
+  .octicon {
+    display: none;
+  }
+  // mc 代码块复制按钮定义
+  .wmde-markdown pre:hover .copied:hover {
+    background: #7f56d9;
+  }
+}
+.ai-code-md-edit.wmde-markdown {
+  font-size: 13px;
+  color: #475467;
+}
+
+.mateAgentContent {
+  .mateHeader {
+    display: flex;
+    align-items: center;
+    img {
+      width: 40px;
+    }
+    .mateHeaderCon {
+      margin-left: 12px;
+      h3 {
+        font-size: 12px;
+        color: #475467;
+        font-weight: normal;
+      }
+      .mateHeaderConName {
+        font-size: 16px;
+        color: #181b25;
+        font-weight: 500;
+      }
+    }
+  }
+  .mateContentItem {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #d0d5dd;
+      box-sizing: border-box;
+    }
+    h2 {
+      font-size: 14px;
+      color: #181b25;
+      font-weight: 500;
+      line-height: 28px;
+      margin-bottom: 8px;
+    }
+    .mateTable {
+      .ant-table {
+        border: 1px solid #e4e7ec;
+        box-sizing: border-box;
+        overflow: hidden;
+        .tag {
+          border-radius: 4px;
+          &.ant-tag-error {
+            border-color: #ffc0c5;
+            background: #ffebec;
+            color: #d02533;
+          }
+          &.ant-tag-success {
+            border-color: #c2f5da;
+            background: #e0faec;
+            color: #178c4e;
+          }
+        }
+        .ant-table-thead {
+          th {
+            padding: 11px 16px !important;
+          }
+        }
+        .ant-table-tbody {
+          .ant-table-row {
+            .ant-table-cell {
+              padding: 0 16px !important;
+              height: 36px;
+              border: none;
+            }
+            &:nth-child(odd) {
+              .ant-table-cell {
+                background: #fff;
+              }
+            }
+            &:nth-child(even) {
+              .ant-table-cell {
+                background: #fcfcfd;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mateAgentTrainingDrawerHeader {
+  position: relative;
+  .ant-drawer-close {
+    position: absolute;
+    right: 16px;
+    margin: 0;
+  }
+}
+
+.metaAgentPopover {
+  width: 475px;
+  .ant-popover-inner {
+    padding: 16px;
+    .ant-popover-title {
+      font-size: 16px;
+      color: #181b25;
+      margin-bottom: 24px;
+    }
+    .ant-form {
+      .ant-form-item {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// 自定义 Radio 组样式
+.customRadioGroup {
+  :global {
+    .ant-radio-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .ant-radio-wrapper {
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+      padding: 6px 12px;
+      margin-right: 0;
+      transition: all 0.3s;
+      background-color: #fff;
+
+      &:hover {
+        border-color: #7f56d9;
+        background-color: #f5f3ff;
+      }
+
+      &.ant-radio-wrapper-checked {
+        border-color: #7f56d9;
+        background-color: #f5f3ff;
+        color: #7f56d9;
+
+        .ant-radio-inner {
+          border-color: #7f56d9;
+          background-color: #7f56d9;
+        }
+
+        .ant-radio-inner::after {
+          background-color: #fff;
+        }
+      }
+
+      .ant-radio {
+        .ant-radio-inner {
+          border-color: #d9d9d9;
+
+          &:hover {
+            border-color: #7f56d9;
+          }
+        }
+      }
+    }
+  }
+}

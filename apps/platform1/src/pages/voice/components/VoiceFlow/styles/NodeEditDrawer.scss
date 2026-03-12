@@ -1,0 +1,125 @@
+.node-edit-drawer-offset {
+  margin-top: 68px;
+
+  .ant-drawer-content-wrapper {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+    will-change: width;
+    // transition:
+    //   width 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+    //   transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  // 确保抽屉内容不会被拖动条遮挡
+  .ant-drawer-body {
+    padding-left: 24px;
+  }
+}
+
+.property-config-drawer {
+  .ant-drawer-content-wrapper {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+
+.property-confi-drawer {
+  margin-top: 68px;
+  .ant-drawer-content-wrapper {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+    left: var(--sidebar-width, 256px) !important;
+    top:-7px;
+  }
+  // 确保抽屉内容不会被拖动条遮挡
+  .ant-drawer-body {
+    padding-left: 24px;
+  }
+}
+.property-confi-drawer-embedded {
+  margin-top: 68px;
+  .ant-drawer-content-wrapper {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-shadow: none !important;
+    border-left: 1px solid rgba(5, 5, 5, 0.06);
+  }
+}
+
+.drawer-resize-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 100%;
+  cursor: col-resize;
+  z-index: 100;
+  background-color: transparent;
+  user-select: none;
+  touch-action: none;
+
+  // 使用半透明的垂直线作为拖动指示
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    height: 50px;
+    width: 5px;
+    background-color: rgba(192, 192, 192, 0.7);
+    border-radius: 5px;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    transition:
+      background-color 0.2s,
+      opacity 0.2s,
+      height 0.2s;
+    will-change: opacity, height, background-color;
+  }
+
+  // 鼠标悬停时的效果
+  &:hover:after {
+    opacity: 1;
+    background-color: #7f56d9;
+    height: 55px;
+  }
+
+  // 拖动时的效果
+  &.active:after {
+    opacity: 1;
+    background-color: #7f56d9;
+    height: 55px;
+  }
+}
+
+// 当拖动时添加全局状态
+body.drawer-resizing {
+  cursor: col-resize !important;
+  user-select: none;
+
+  * {
+    user-select: none !important;
+    pointer-events: none;
+  }
+
+  .drawer-resize-handle {
+    pointer-events: auto;
+
+    &:after {
+      opacity: 1;
+      background-color: #7f56d9;
+      height: 55px;
+    }
+  }
+}
+
+/* 只在拖动时禁用过渡效果 */
+body.drawer-resizing .node-edit-drawer-offset .ant-drawer-content-wrapper {
+  transition: none !important;
+}

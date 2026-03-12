@@ -1,0 +1,37 @@
+.baseInfoContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .baseInfoWrap {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .baseInfoItem {
+      .baseInfoTitle {
+        display: flex;
+        color: #4e5969;
+        font-size: 14px;
+        font-weight: 400;
+      }
+      .baseInfoContent {
+        margin-top: 8px;
+        word-break: break-all;
+        color: #181b25;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+    .ant-col:not(:first-child) {
+      margin-top: 16px;
+    }
+    @media (min-width: 1200px) {
+      .ant-col:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+  }
+}

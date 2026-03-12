@@ -1,0 +1,101 @@
+.container {
+  position: relative;
+  .ant-tree li span.ant-tree-switcher,
+  .ant-tree li span.ant-tree-iconEle {
+    display: inline;
+  }
+  .ant-tree li ul {
+    padding: 0 0 0 15px;
+  }
+  .ant-tree li .ant-tree-node-content-wrapper {
+    color: #333;
+    box-sizing: border-box;
+    padding: 0 15px;
+  }
+  .ant-tree-treenode {
+    padding: 0 !important;
+  }
+  // .ant-tree-node-content-wrapper.ant-tree-node-selected {
+  //   color: #7f56d9 !important;
+  // }
+  // .ant-tree-treenode-selected{
+  //   background-color: #f0f3ff!important;
+  // }
+  .ant-tree .ant-tree-node-content-wrapper .ant-tree-iconEle {
+    display: none;
+  }
+  .ant-tree.ant-tree-directory
+    .ant-tree-treenode
+    .ant-tree-node-content-wrapper.ant-tree-node-selected,
+  .ant-tree.ant-tree-directory .ant-tree-treenode-selected .ant-tree-switcher {
+    color: #333;
+  }
+  .ant-tree.ant-tree-directory .ant-tree-treenode-selected:hover::before,
+  .ant-tree.ant-tree-directory .ant-tree-treenode-selected::before {
+    background: none;
+  }
+  .ant-tree-switcher {
+    width: 15 !important;
+  }
+  .tree-node {
+    width: 100%;
+    .title {
+      display: inline-block;
+      margin: 3px 10px 3px 0;
+      font-size: 13px;
+      width: 100%;
+    }
+    .edit-input {
+      height: 24px;
+      width: 160px;
+    }
+    .edit-btn-container {
+      float: right;
+      .tree-icon {
+        color: #44cb9e;
+        margin-right: 5px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .tree-node:hover {
+    .edit-btn-container {
+      display: inline;
+    }
+  }
+  .ant-tree-treenode:before {
+    bottom: 0 !important;
+  }
+
+  .edit-btn-container {
+    display: none;
+  }
+  .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #efefef;
+    opacity: 0.3;
+  }
+  p.loading {
+    color: #44cb9e;
+    font-size: 28px;
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.add-tree {
+  display: flex;
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+.type-icon {
+  margin-right: 10px;
+}

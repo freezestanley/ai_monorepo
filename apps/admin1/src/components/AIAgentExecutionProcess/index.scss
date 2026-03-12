@@ -1,0 +1,147 @@
+.ai-agent-execution-process {
+  background-color: #fff;
+}
+
+.execution-step {
+  margin-bottom: 0;
+  position: relative;
+  &:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 15px;  /* 与图标中心对齐 */
+    top: 32px;  /* 从图标底部开始 */
+    bottom: 0;
+    width: 1px;
+    border-left: 1px dashed #d9d9d9;
+  }
+}
+
+
+.step-header {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.step-status {
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.step-status .success {
+  color: #52c41a;
+  font-size: 16px;
+}
+
+.step-status .error {
+  color: #fb3748;
+  font-size: 16px;
+
+}
+
+.step-info {
+  flex-grow: 1;
+}
+
+.step-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(24, 27, 37, 1);
+}
+
+.step-type {
+  font-size: 12px;
+  color: #8c8c8c;
+  margin-left: 8px;
+}
+
+.step-time {
+  font-size: 12px;
+  color: #8c8c8c;
+  margin-right: 12px;
+}
+
+.expand-icon {
+  font-size: 12px;
+  transition: transform 0.3s;
+}
+
+.expand-icon.expanded {
+  transform: rotate(-180deg);
+}
+
+.step-details {
+  padding: 12px 0px;
+  background-color: #fff;
+  margin-left: 32px;
+}
+
+.io-section {
+  margin-bottom: 16px;
+}
+
+.io-header {
+  font-size: 14px;
+  color: #1890ff;
+  background-color: #F5F7FA;
+  padding: 10px 8px;
+  border-radius: 8px 8px 0 0;
+  .header-title {
+    color: rgba(24, 27, 37, 1);
+  }
+}
+
+.io-content {
+  background-color: #F5F7FA;
+  border-radius: 0 0 8px 8px;
+  padding: 8px;
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+  font-family: monospace;
+  overflow: auto;
+  max-height: 70vh;
+}
+
+.error-message {
+  color: #fb3748;
+  font-size: 12px;
+}
+
+.operate-icon {
+  font-size: 16px;
+  color: rgba(71, 84, 103, 1);
+  cursor: pointer;
+}
+
+.operate-icon:hover {
+  color: #1890ff;
+}
+
+.code-block-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  background-color: rgba(244, 244, 244, 1);
+  border-radius: 0 0 8px 8px;
+
+  &.expanded {
+    max-height: 800px; // 根据实际内容调整此值
+    overflow: auto;
+  }
+
+  .code-block {
+    margin: 0;
+    padding: 8px;
+  }
+}
+
+.content-expand-icon {
+  transition: transform 0.3s ease;
+  &.expanded {
+    transform: rotate(-180deg);
+  }
+}

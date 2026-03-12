@@ -1,0 +1,193 @@
+.vhcenter > ol {
+  justify-content: center;
+  align-items: center;
+}
+.info-view-page {
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .info-section {
+      .ant-typography h3 {
+        margin-bottom: 16px;
+        color: #262626;
+      }
+
+      .meta-info {
+        margin-bottom: 16px;
+
+        .ant-row {
+          .ant-col {
+            margin-bottom: 8px;
+          }
+        }
+      }
+
+      .summary-section {
+        margin-top: 16px;
+
+        .ant-typography-paragraph {
+          background: #fafafa;
+          padding: 12px 16px;
+          border-radius: 6px;
+          border-left: 4px solid #1890ff;
+        }
+      }
+    }
+
+    .cover-section {
+      margin: 24px 0;
+
+      .ant-image {
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .content-section {
+      margin: 24px 0;
+
+      .content-body {
+        margin-top: 16px;
+        padding: 20px;
+        background: #fafafa;
+        border-radius: 8px;
+        border: 1px solid #f0f0f0;
+        line-height: 1.8;
+        font-size: 14px;
+
+        // 富文本编辑器内容样式
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          margin: 16px 0 8px 0;
+          color: #262626;
+        }
+
+        p {
+          margin: 8px 0;
+          color: #595959;
+        }
+
+        ul,
+        ol {
+          margin: 8px 0;
+          padding-left: 24px;
+        }
+
+        li {
+          margin: 4px 0;
+        }
+
+        blockquote {
+          margin: 16px 0;
+          padding: 12px 16px;
+          background: #f0f2f5;
+          border-left: 4px solid #d9d9d9;
+          color: #8c8c8c;
+        }
+
+        code {
+          background: #f5f5f5;
+          padding: 2px 4px;
+          border-radius: 3px;
+          font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+        }
+
+        pre {
+          background: #f5f5f5;
+          padding: 12px;
+          border-radius: 6px;
+          overflow-x: auto;
+
+          code {
+            background: none;
+            padding: 0;
+          }
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 4px;
+          margin: 8px 0;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 16px 0;
+
+          th,
+          td {
+            border: 1px solid #f0f0f0;
+            padding: 8px 12px;
+            text-align: left;
+          }
+
+          th {
+            background: #fafafa;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .attachments-section {
+      margin: 24px 0;
+
+      .attachment-item {
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        a {
+          color: #1890ff;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .info-view-page {
+    .page-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .content-wrapper {
+      padding: 0 16px;
+
+      .content-section .content-body {
+        padding: 16px;
+      }
+
+      .meta-info .ant-row .ant-col {
+        width: 100%;
+      }
+    }
+  }
+}

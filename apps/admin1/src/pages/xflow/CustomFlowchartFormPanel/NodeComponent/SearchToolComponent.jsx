@@ -1,0 +1,193 @@
+import { useEffect, useState } from "react"
+import { Form, Input, Select, Row, Col, Button, Divider, Tabs } from "antd"
+import GlobalVariableSelect from "@/components/GlobalVariableSelect"
+import DynamicFormComponent from "./components/DynamicFormComponent"
+import { useFormData } from "../../hooks/useInputFormData"
+import { useFetchGlobalVariable } from "@/api/skill"
+import { useNodeUpdate } from "../../hooks/useNodeUpdate"
+import useSaveShortcut from "../../hooks/useSaveShortcut"
+import { isFunction } from "lodash"
+import { CommonContent } from "../CommonContent"
+import { useCurrentSkillLockInfo } from "@/store/index"
+import useFormDisabled from "@/pages/xflow/hooks/useFormDisabled"
+import { useSearchEngineType } from "@/api/common"
+import { useCustomVariableType } from "../../hooks"
+import { formatSessionParams } from "./utils"
+import PreJudgment from "./components/PreJudgment"
+import DynamicFormList from "./DynamicFormList"
+import CustomDivider from "@/components/CustomDivider"
+
+const TabPane = Tabs.TabPane
+
+const SearchToolComponent = ({ targetData, appData, commandService }) => {
+  const { form, formData } = useFormData()
+  const [_, forceUpdate] = useState({})
+
+  const { updateNodeComp, skillFlowData, isLoading } = useNodeUpdate(commandService, appData)
+  const { data: globalData = [] } = useFetchGlobalVariable(skillFlowData?.versionNo)
+  const { data: engineTypeOptions } = useSearchEngineType()
+
+  const { isLocked } = useCurrentSkillLockInfo((state) => state.currentSkillLockInfo)
+  const [isDisabled] = useFormDisabled()
+
+  useEffect(() => {
+    form.setFieldsValue({
+      ...targetData,
+      inputParams: targetData?.inputParams?.[0]
+    }) // assuming targetData fields match with form fields
+    forceUpdate({})
+  }, [targetData, form])
+
+  const onFinish = (callback = () => {}, noMessage = false) => {
+    return form.validateFields().then((values) => {
+      const callbackFunc = isFunction(callback) ? callback : () => {}
+      const session = formatSessionParams(globalData, values.sessions)
+      console.log("Received values of form: ", values)
+      const params = {
+        ...values,
+        inputParams: [values.inputParams],
+        session
+      }
+      updateNodeComp(
+        {
+          ...targetData,
+          ...params,
+          label: values.componentName,
+          globalDataOptions: globalData
+        },
+        callbackFunc,
+        noMessage
+      )
+      forceUpdate({})
+    })
+  }
+
+  useSaveShortcut(onFinish, isLoading)
+  const { data: varOptions = [] } = useCustomVariableType()
+
+  return (
+    <div className="common-node-wrapper">
+      <div className="base-node-comp ">
+        <Form
+          form={form}
+          onFinish={onFinish}
+          labelCol={{ span: 24 }}
+          disabled={isDisabled}
+          layout="vertical"
+        >
+          <CommonContent
+            title={"搜索组件"}
+            containerClass="noPadding"
+            onFinish={onFinish}
+            isLoading={isLoading}
+            disabled={isLocked}
+          >
+            <Tabs defaultActiveKey="1" type="line">
+              <TabPane tab="组件设置" key="1" forceRender>
+                <PreJudgment form={form} />
+                <CustomDivider showTopLine={true}>基础设置</CustomDivider>
+                <Row className="mt-3">
+                  <Col span={24}>
+                    <Form.Item
+                      labelCol={{
+                        span: 4
+                      }}
+                      name="componentName"
+                      label="组件名"
+                      tooltip="组件名建议由中英文、数字、下划线和短横线组成，且不超过64个字符"
+                      rules={[{ required: true, message: "请输入组件名" }]}
+                    >
+                      <Input placeholder="请输入组件名" />
+                    </Form.Item>
+
+                    {/* 来一个搜索类型Select */}
+                    <Form.Item
+                      labelCol={{
+                        span: 4
+                      }}
+                      name="engine"
+                      label="搜索类型"
+                      rules={[{ required: true, message: "请选择搜索类型" }]}
+                    >
+                      <Select placeholder="请选择搜索类型">
+                        {engineTypeOptions?.map((item) => (
+                          <Select.Option key={item.code} value={item.code}>
+                            {item.name}
+                          </Select.Option>
+                        ))}
+                      </Select>
+                    </Form.Item>
+                  </Col>
+                  <CustomDivider showTopLine={true}>输入参数</CustomDivider>
+                  <Col span={24}>
+                    <GlobalVariableSelect
+                      label={"输入"}
+                      span={3}
+                      formName="inputParams"
+                      multiple={false}
+                      layout="vertical"
+                      disabled={isDisabled}
+                    />
+                  </Col>
+                </Row>
+                <CustomDivider showTopLine={true}>输出参数</CustomDivider>
+                <Row gutter={16}>
+                  <Col span={12}>
+                    <Form.Item label="输出结果类型" className="mb-2">
+                      <Input value="JSON数组" disabled={true} />
+                    </Form.Item>
+                  </Col>
+                  <Col span={12}>
+                    <Form.Item
+                      name="outputName"
+                      label="输出变量名"
+                      rules={[{ required: true, message: "请输入" }]}
+                      className="mb-2"
+                    >
+                      <Input placeholder="输出变量名" />
+                    </Form.Item>
+                  </Col>
+                </Row>
+                <div className="bg-[#F5F7FA] p-2 rounded-md">
+                  <div>
+                    <span className="item-title">数组中每个元素包含的字段</span>
+                  </div>
+                  <div className="mt-2">
+                    <span className="item-title">搜索结果的标题：</span>
+                    <span className="item-value">title</span>
+                  </div>
+                  <div className="mt-2">
+                    <span className="item-title">搜索结果的网址：</span>
+                    <span className="item-value">url</span>
+                  </div>
+                  <div className="mt-2">
+                    <span className="item-title">搜索结果的缩略图地址：</span>
+                    <span className="item-value">thumbnailUrl</span>
+                  </div>
+                  <div className="mt-2">
+                    <span className="item-title">搜索结果的摘要：</span>
+                    <span className="item-value">snippet</span>
+                  </div>
+                </div>
+              </TabPane>
+              <TabPane tab="后置处理" key="2" forceRender>
+                <DynamicFormList form={form} varOptions={varOptions} />
+              </TabPane>
+            </Tabs>
+          </CommonContent>
+        </Form>
+        <div className="debug-panel">
+          <DynamicFormComponent
+            nodeId={targetData.id}
+            preview={false}
+            isProcess={false}
+            formData={formData}
+            onFinish={onFinish}
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default SearchToolComponent

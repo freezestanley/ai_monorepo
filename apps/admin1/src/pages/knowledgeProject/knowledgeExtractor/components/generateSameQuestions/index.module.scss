@@ -1,0 +1,19 @@
+.same-questons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  :global {
+    .ant-btn {
+      margin-left: 15px;
+    }
+  }
+}
+
+.same-generate {
+  :global {
+    .ant-form-item-label {
+      width: 100px;
+      font-weight: bold;
+    }
+  }
+}

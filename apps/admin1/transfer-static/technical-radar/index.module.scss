@@ -1,0 +1,10 @@
+:global {
+  .content-v2 {
+    .technical-radar {
+      height: calc(100vh - 40px) !important;
+      .technical-header {
+        display: none;
+      }
+    }
+  }
+}

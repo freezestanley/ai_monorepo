@@ -1,0 +1,25 @@
+.item {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.06) 25%,
+    rgba(0, 0, 0, 0.15) 37%,
+    rgba(0, 0, 0, 0.15) 63%
+  );
+  height: 180px;
+  background-size: 400% 100%;
+  animation-name: ant-skeleton-loading;
+  animation-duration: 1.4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+@keyframes ant-skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}

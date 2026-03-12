@@ -1,0 +1,418 @@
+.model-series-detail {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: #7F56D9; // 使用项目主题色
+  overflow: hidden;
+
+  &.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  .detail-header {
+    background: #fff;
+    padding: 24px;
+    border-bottom: 1px solid #e7ebf1;
+    flex-shrink: 0;
+
+    .back-button {
+      margin-bottom: 16px;
+      color: #7F56D9; // 使用项目主题色
+
+      &:hover {
+        color: #5936b0; // 深色主题色
+      }
+    }
+
+    .header-info {
+      .series-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        .series-title-content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .title-icon {
+          margin-right: 8px;
+          color: #7F56D9; // 使用项目主题色
+          font-size: 20px;
+        }
+
+        .title-text {
+          font-size: 24px;
+          font-weight: 600;
+          color: #7F56D9; // 使用项目主题色
+          margin: 0;
+        }
+      }
+
+      .series-meta {
+        margin-left: 12px;
+      }
+
+      .series-description {
+        color: #838383;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .series-update-time {
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+      }
+    }
+  }
+
+  .detail-content {
+    padding: 10px 24px;
+    background: #ffffff;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .model-info {
+      margin-bottom: 16px;
+
+      .model-info-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+
+        .info-title {
+          font-weight: 500;
+          color: black;
+        }
+
+        .header-title {
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .ant-btn-link {
+          color: #7F56D9; // 使用项目主题色
+
+          &:hover {
+            color: #5936b0; // 深色主题色
+          }
+        }
+      }
+
+      .ant-typography-h4 {
+        color: #7F56D9; // 使用项目主题色
+        margin-bottom: 16px;
+        padding-left: 12px;
+        border-left: 4px solid #7F56D9; // 使用项目主题色
+        font-weight: 600;
+      }
+
+      .info-section {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #f0f0f0;
+
+        &:last-child {
+          margin-bottom: 0;
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+
+        h5 {
+          color: #7F56D9; // 使用项目主题色
+          margin-bottom: 12px;
+          font-weight: 600;
+          // background: rgba(113, 99, 206, 0.05); // 使用项目主题色的浅色背景
+          padding: 8px 12px;
+          border-radius: 4px;
+          border-left: 2px solid #7F56D9; // 使用项目主题色
+        }
+
+        .ant-typography {
+          font-size: 14px;
+        }
+
+        .ant-descriptions {
+          .ant-descriptions-item-label {
+            font-weight: 500;
+            color: #78879c;
+            background: #f7f8fd;
+          }
+
+          .ant-descriptions-item-content {
+            color: #294e83;
+            font-weight: 500;
+          }
+        }
+
+        .price-section {
+          .ant-list {
+            margin-top: 8px;
+
+            .ant-list-item {
+              padding: 8px 0;
+              border-bottom: 1px solid #f0f0f0;
+
+              &:last-child {
+                border-bottom: none;
+              }
+            }
+          }
+
+          .price-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
+            gap: 8px;
+          }
+
+          .price-details {
+            margin-top: 8px;
+
+            .input-range-info {
+              display: inline-block;
+              background: #f7f8fd;
+              padding: 4px 12px;
+              border-radius: 4px;
+              border: 1px solid #e7ebf1;
+              font-size: 12px;
+              color: #78879c;
+              margin-bottom: 12px;
+            }
+          }
+        }
+
+        .feature-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+        }
+      }
+    }
+
+    .capabilities-container {
+      .io-section {
+        margin-bottom: 12px;
+      }
+      
+      .special-features-section {
+        .ant-descriptions-item-label {
+          vertical-align: top;
+        }
+      }
+    }
+
+    .related-models-section {
+      margin-top: 10px;
+      background: #f8faff;
+      border-radius: 8px;
+      padding: 16px;
+      border: 1px solid #e8f0fe;
+
+      .ant-typography-h4 {
+        color: #1890ff;
+        margin-bottom: 16px;
+        font-size: 14px;
+        font-weight: 600;
+        border-bottom: 1px solid #e8f4fd;
+        padding-bottom: 6px;
+      }
+
+      .ant-list {
+        background: #ffffff;
+        border-radius: 6px;
+        border: 1px solid #e8f0fe;
+      }
+
+      .related-model-item {
+        padding: 12px 16px;
+        border-bottom: 1px solid #f0f0f0;
+        margin: 0;
+
+        &:first-child {
+          border-top-left-radius: 6px;
+          border-top-right-radius: 6px;
+        }
+
+        &:last-child {
+          border-bottom: none;
+          border-bottom-left-radius: 6px;
+          border-bottom-right-radius: 6px;
+        }
+
+        &:hover {
+          background: #f8fafc;
+        }
+
+        .model-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          background: #f7f8fd;
+          border-radius: 6px;
+          border: 1px solid #e7ebf1;
+
+          .anticon {
+            color: #006aff;
+          }
+        }
+
+        .model-header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 8px;
+          flex-wrap: wrap;
+          width: 100%;
+
+          .ant-typography {
+            font-size: 14px;
+            font-weight: 600;
+            color: #294e83;
+          }
+        }
+
+        .model-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 8px;
+          width: 100%;
+        }
+      }
+
+      .ant-list-pagination {
+        margin-top: 16px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .model-series-detail {
+    .detail-header {
+      padding: 16px;
+
+      .header-info {
+        .series-title {
+          font-size: 20px;
+        }
+
+        .series-meta {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+      }
+    }
+
+    .detail-content {
+      padding: 16px;
+
+      .related-models-section {
+        .related-model-item {
+          margin: 0 -16px;
+          padding-left: 16px;
+          padding-right: 16px;
+
+          .model-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+          }
+
+          .model-footer {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .model-series-detail {
+    .detail-content {
+      .main-model-info {
+        .ant-descriptions {
+          .ant-descriptions-item {
+            padding-bottom: 8px;
+          }
+
+          .ant-descriptions-item-label {
+            width: 80px;
+            font-size: 13px;
+          }
+
+          .ant-descriptions-item-content {
+            font-size: 13px;
+          }
+        }
+      }
+
+      .related-models-section {
+        .related-model-item {
+          .model-header {
+            .ant-typography {
+              font-size: 13px;
+            }
+          }
+
+          .model-footer {
+            .ant-btn {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 打印样式
+@media print {
+  .model-series-detail {
+    background: #fff;
+    padding: 0;
+
+    .detail-header {
+      box-shadow: none;
+      border: 1px solid #d9d9d9;
+
+      .back-button {
+        display: none;
+      }
+    }
+
+    .detail-content {
+      .model-card {
+        box-shadow: none;
+        border: 1px solid #d9d9d9;
+        margin-bottom: 16px;
+        break-inside: avoid;
+      }
+    }
+  }
+}

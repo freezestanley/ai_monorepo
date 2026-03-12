@@ -1,0 +1,96 @@
+.sidebar-menu-dropdown {
+  height: auto;
+  min-width: 150px;
+}
+
+.sidebar-menu-dropdown .ant-dropdown-menu {
+  padding: 10px 8px;
+  border-radius: 12px;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  background: #ffffff;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.sidebar-menu-dropdown .ant-dropdown-menu-item,
+.sidebar-menu-dropdown .ant-dropdown-menu-submenu-title {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #667085;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 40px;
+  margin-bottom: 10px;
+}
+
+.sidebar-menu-dropdown .ant-dropdown-menu-item:hover,
+.sidebar-menu-dropdown .ant-dropdown-menu-submenu-title:hover {
+  background-color: #f8fafc;
+}
+
+.sidebar-menu-dropdown .ant-dropdown-menu-item-selected {
+  background-color: #f0ecff;
+  color: #7958d2;
+}
+
+.sidebar-menu-dropdown .ant-dropdown-menu-item:last-child,
+.sidebar-menu-dropdown .ant-dropdown-menu-submenu-title:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-menu-dropdown .ant-dropdown-menu-title-content {
+  color: #667085;
+}
+
+.sidebar-menu-dropdown .ant-dropdown-menu-item-selected .ant-dropdown-menu-title-content {
+  color: #7958d2;
+}
+
+.sidebar-menu-dropdown .ant-dropdown-menu-submenu-arrow {
+  color: #98a2b3;
+}
+
+.sidebar-menu-dropdown .sidebar-menu-dropdown-icon,
+.sidebar-menu-dropdown .ant-dropdown-menu-item-icon,
+.sidebar-menu-dropdown .ant-dropdown-menu-submenu-title-icon {
+  width: 16px;
+  height: 16px;
+  font-size: 14px;
+  line-height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #98a2b3;
+}
+
+.sidebar-menu-dropdown .sidebar-menu-dropdown-icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.sidebar-menu-dropdown .ant-dropdown-menu-item-selected .sidebar-menu-dropdown-icon,
+.sidebar-menu-dropdown .ant-dropdown-menu-item-selected .ant-dropdown-menu-item-icon,
+.sidebar-menu-dropdown .ant-dropdown-menu-item-selected .ant-dropdown-menu-submenu-title-icon {
+  color: #7958d2;
+}
+
+.sidebar-menu-scroll,
+.sidebar-menu-wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none !important;
+}
+
+.sidebar-menu-scroll::-webkit-scrollbar,
+.sidebar-menu-wrapper::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none;
+  background: transparent;
+}

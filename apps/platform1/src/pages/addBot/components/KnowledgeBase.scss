@@ -1,0 +1,48 @@
+.knowledge-base-wrapper {
+  display: flex;
+}
+
+.tree-wrapper {
+  padding-top: 0px;
+  flex-basis: 220px;
+  padding-right: 20px;
+  border-right: 1px solid var(---, #e4e7ec);
+  height: 99vh;
+  overflow-y: auto;
+  margin-top: -20px;
+  .ant-select {
+    // margin-top: 20px;
+    // margin-bottom: 32px !important;
+
+    position: fixed;
+    background: #fff;
+    top: 0;
+    // top:60px;
+    z-index: 100;
+    width: 200px !important;
+    padding: 20px 0;
+    height: 72px !important;
+    box-shadow: none;
+  }
+
+  .ant-tree {
+    margin-top: 75px;
+  }
+}
+
+.table-wrapper {
+  // padding-top: 16px;
+  padding-left: 20px;
+  flex: 1;
+  height: calc(100vh - 20px);
+  overflow-y: auto;
+}
+
+.entry-page-no-iframe {
+  .table-wrapper {
+    height: calc(100vh - 40px);
+  }
+  .tree-wrapper {
+    max-height: calc(100vh - 400px);
+  }
+}

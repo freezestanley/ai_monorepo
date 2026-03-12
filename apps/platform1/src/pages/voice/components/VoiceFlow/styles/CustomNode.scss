@@ -1,0 +1,250 @@
+.voice-flow-custom-node {
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0);
+  min-width: 120px;
+  max-height: 400px;
+  width: auto;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-radius: 8px;
+    border: 1px solid var(---, #7f56d9);
+    background: rgba(220, 213, 255, 0.1);
+    box-shadow: 0px 4px 24px 0px rgba(24, 27, 37, 0.12);
+  }
+
+  .node-content {
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid transparent;
+    color: #575757;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    min-width: 300px;
+    box-sizing: border-box;
+    max-height: 320px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .node-content-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .delete-button {
+      color: #ff4d4f;
+      cursor: pointer;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 4px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s;
+      z-index: 10;
+
+      &:hover {
+        background: rgba(255, 77, 79, 0.1);
+        transform: scale(1.1);
+      }
+    }
+
+    .more-button {
+      color: #666;
+      cursor: pointer;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 4px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s;
+      z-index: 10;
+
+      &:hover {
+        background: rgba(127, 86, 217, 0.1);
+        color: #7f56d9;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .node-content-text {
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 250px;
+    overflow-y: hidden;
+
+    div {
+      display: -webkit-box;
+      -webkit-line-clamp: 12;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+    }
+
+    // Line clamp utility for 7 lines
+    .line-clamp-7 {
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+    }
+  }
+
+  &.selected {
+    border-radius: 8px;
+    border: 1px solid var(---, #7f56d9);
+    background: rgba(220, 213, 255, 0.1);
+    box-shadow: 0px 4px 24px 0px rgba(24, 27, 37, 0.12);
+    // .node-content {
+    //   box-shadow: 0 0 10px 0 rgba(127, 86, 217, 0.3);
+    //   border: 1px solid rgba(127, 86, 217, 1);
+    // }
+
+    // .node-tags {
+    //   .tag {
+    //     background: rgba(127, 86, 217, 0.04);
+    //   }
+    // }
+  }
+
+  // 新增：节点高亮时的子元素样式
+  &.node-highlighted {
+    .voice-flow-custom-node {
+      transition: all 0.25s ease;
+      border-radius: 8px;
+      border: 1px solid var(---, #7f56d9);
+      background: rgba(220, 213, 255, 0.1);
+      box-shadow: 0px 4px 24px 0px rgba(24, 27, 37, 0.12);
+    }
+
+    .node-content {
+      transition: all 0.25s ease;
+      box-shadow: 0 0 10px 0 rgba(127, 86, 217, 0.3);
+    }
+
+    .node-tags {
+      .tag {
+        transition: all 0.25s ease;
+        box-shadow: 0 0 10px 0 rgba(127, 86, 217, 0.3);
+      }
+    }
+
+    .react-flow__handle-top {
+      top: 13px;
+      transition: all 0.25s ease;
+      border: 2px solid rgba(127, 86, 217, 1) !important;
+    }
+  }
+
+  .node-header {
+    font-size: 12px;
+    color: #666;
+    margin: 5px 0;
+  }
+
+  .node-tags-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    min-width: 120px;
+
+    .node-tags {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      flex: 0 0 auto;
+      min-width: 300px;
+      border-radius: 4px;
+
+      .tag {
+        position: relative;
+        padding: 4px 8px;
+        // background: #f5f7fa;
+        background: #fff;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+        white-space: nowrap;
+        border-radius: 4px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background: rgba(236, 236, 236, 0.8);
+          // background: #fff;
+        }
+      }
+    }
+
+    .add-tag-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      cursor: pointer;
+      color: #666;
+      font-size: 16px;
+      flex-shrink: 0;
+      transition: color 0.3s;
+
+      &:hover {
+        color: rgba(127, 86, 217, 1);
+      }
+    }
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f0f0f0;
+      border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 2px;
+      &:hover {
+        background: #999;
+      }
+    }
+  }
+
+  .react-flow__handle-target {
+    width: 8px;
+    height: 8px;
+    border: 2px solid #666;
+    background: white;
+    border-radius: 50%;
+    top: -4px;
+    right: auto;
+    left: 50%;
+    margin-left: -4px;
+  }
+
+  .ant-empty .ant-empty-image {
+    height: 45px;
+  }
+
+  .ant-empty-description {
+    font-size: 12px;
+    color: #5f5f5f;
+    margin-top: -6px;
+  }
+}
+
+// 气泡卡片内的标签选择器样式

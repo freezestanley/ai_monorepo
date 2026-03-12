@@ -1,0 +1,107 @@
+$primary-color: #7F56D9;
+
+.search-box {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.formDrawerTitle {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.pageTitle {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.knowledgeItem {
+  box-sizing: border-box;
+  border: 1px solid $primary-color;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+  background: #fff;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  .knowledgeItemBtns {
+    background: $primary-color;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    z-index: 1;
+    cursor: initial;
+
+    :global {
+      .anticon {
+        padding: 5px 4px;
+        cursor: pointer;
+        margin: 0 2px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  h1 {
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+
+    :global {
+      .ant-tag {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  p {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+    margin-top: 8px;
+  }
+
+  .knowledgeItemDesc {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.55);
+    margin-top: 8px;
+    min-height: 40px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .knowledgeItemFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 12px;
+    height: 22px;
+
+    .time {
+      color: #ddd;
+      display: flex;
+      align-items: center;
+
+      :global {
+        .anticon {
+          margin-right: 4px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

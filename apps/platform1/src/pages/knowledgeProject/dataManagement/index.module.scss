@@ -1,0 +1,115 @@
+$primary-color: #7F56D9;
+
+.searchbox {
+  margin-top: 10px;
+
+  // display: flex;
+  // flex-direction: column;
+  .ant-btn-primary {
+    background-color: red;
+  }
+
+  .Button {
+  }
+}
+
+.breadcrumb {
+  font-size: 20px;
+  font-weight: 700;
+
+  a {
+    height: initial;
+  }
+}
+
+.headbox {
+  background-color: $primary-color;
+  // border-radius: 3px;
+  margin-bottom: 5px;
+  border: none;
+  height: 32px;
+  line-height: 32px;
+  color: white;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.headbox1 {
+  background-color: $primary-color;
+  // border-radius: 3px;
+  margin-bottom: 5px;
+  border: none;
+  height: 32px;
+  line-height: 32px;
+  color: white;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.stepsBox {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 24px;
+
+  :global {
+    .ant-steps-item {
+      &-content {
+        .ant-steps-item-title {
+          font-size: 14px;
+        }
+        .ant-steps-item-description {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.verticalFormItem {
+  :global {
+    .ant-row {
+      flex-direction: column;
+
+      .ant-form-item-label {
+        text-align: left;
+      }
+    }
+  }
+}
+
+.portraitTime {
+  margin: 0 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.portraitRow {
+  margin: 20px 0 40px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  :global {
+    .ant-col {
+      box-sizing: border-box;
+      min-height: 200px;
+
+      &:not(:last-child) {
+        border-right: 1px solid #f0f0f0;
+      }
+
+      h1 {
+        font-size: 14px;
+        margin: 10px 0;
+      }
+
+      .ant-spin {
+        margin: 30px auto;
+        display: block;
+      }
+
+      .ant-spin-container {
+        font-size: 30px;
+      }
+    }
+  }
+}

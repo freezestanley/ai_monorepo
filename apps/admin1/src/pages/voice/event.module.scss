@@ -1,0 +1,87 @@
+.eventContainer {
+  padding: 16px;
+  background-color: #fff;
+  min-height: calc(100vh - 100px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.operations {
+  display: flex;
+  align-items: center;
+}
+
+.rightButtons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.tableWrapper {
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.tableHeader {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  background-color: #fff7e6;
+  border-radius: 4px;
+  border-left: 4px solid #ffa940;
+}
+
+.tableNote {
+  color: #f59a23;
+  font-weight: 500;
+}
+
+.pagination {
+  margin-top: 16px;
+  text-align: right;
+}
+
+.requiredField {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -14px;
+    width: 8px;
+    height: 8px;
+    background-color: #f5a348;
+    border-radius: 4px;
+  }
+}
+
+.detailsContainer {
+  padding: 16px 0;
+}
+
+.detailItem {
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.detailLabel {
+  display: inline-block;
+  width: 100px;
+  color: #666;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.detailValue {
+  color: #333;
+}

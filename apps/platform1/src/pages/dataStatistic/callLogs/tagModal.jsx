@@ -1,0 +1,345 @@
+import { useCallback, useEffect, useMemo, useState } from "react"
+import { Divider, Form, Input, Modal, Select, Space, Table, message, Collapse } from "antd"
+import { useBatchSaveSourceTag, useFetchSourceTag } from "@/api/sourceTag"
+import { fetchSetCallLogsMark, fetchCallLogsMarkDetail } from "@/api/userFeedback/api"
+import { PAGE_CODE } from "@/constants/pageCode"
+import { useGetTestSetList } from "@/api/testSet"
+import { MinusCircleOutlined, PlusCircleOutlined, DownOutlined } from "@ant-design/icons"
+import "./index.less"
+
+const title = {
+  manage: "管理标注标签",
+  setting: "标注及备注"
+}
+
+const TagModal = ({
+  visible,
+  setVisible,
+  mode = "manage",
+  record,
+  refreshTableData,
+  botNo: _botNo
+}) => {
+  const [form] = Form.useForm()
+  const [tagList, setTagList] = useState([])
+  const [testSetList, setTestSetList] = useState([])
+  const { mutate: fetchSourceTag } = useFetchSourceTag()
+  const { mutate: saveSourceTag } = useBatchSaveSourceTag()
+  const { mutate: getTestSetList } = useGetTestSetList()
+  const [isLoading, setIsLoading] = useState(false)
+  const [testSetAddRecords, setTestSetAddRecords] = useState([])
+  const [isActive, setIsActive] = useState(false)
+
+  const botNo = useMemo(() => record?.botNo || _botNo, [record, _botNo])
+
+  const fetchData = useCallback(() => {
+    fetchSourceTag(
+      {
+        botNo,
+        tagType: "callRecordsMark"
+      },
+      {
+        onSuccess: (res) => {
+          // @ts-ignore
+          if (res.success) {
+            if (mode === "manage") {
+              form.setFieldsValue({
+                sourceTagList: res.data?.length > 0 ? res.data : [{}]
+              })
+            }
+            setTagList(res.data)
+          }
+        }
+      }
+    )
+    mode === "setting" &&
+      getTestSetList(
+        {
+          botNo
+        },
+        {
+          onSuccess: (res) => {
+            // @ts-ignore
+            if (res.success === true) {
+              setTestSetList(res.data)
+            }
+          }
+        }
+      )
+  }, [botNo, fetchSourceTag, form, mode, getTestSetList])
+
+  const fetchMarkDetail = useCallback(() => {
+    if (mode !== "setting" || !record?.requestId) return
+    fetchCallLogsMarkDetail({
+      pageCode: PAGE_CODE.CALL_LOGS,
+      requestId: record.requestId,
+      botNo: record?.botNo,
+      requestTime: record?.requestTime
+    }).then((res) => {
+      form.setFieldsValue(res)
+      setTestSetAddRecords(res?.testSetAddRecords)
+    })
+  }, [form, mode, record])
+
+  const onSubmit = useCallback(async () => {
+    const values = await form.validateFields()
+    if (!(values.tag || values.sourceTagList?.length || values.testSetList)) {
+      message.error("请输入必要的内容")
+      return
+    }
+
+    setIsLoading(true)
+    if (mode === "manage") {
+      const submitData = {
+        botNo,
+        tagType: "callRecordsMark",
+        tags: values.sourceTagList?.map((item) => {
+          const val = tagList?.find(({ tagDesc }) => tagDesc === item.tagDesc)
+          return val ? { code: val.code, tagDesc: val.tagDesc } : item
+        })
+      }
+      saveSourceTag(submitData, {
+        onSuccess: (res) => {
+          if (res.success) {
+            message.success("保存成功")
+            setVisible(false)
+            fetchData()
+          }
+          setIsLoading(false)
+        },
+        onError: () => setIsLoading(false)
+      })
+    } else if (mode === "setting") {
+      fetchSetCallLogsMark({
+        pageCode: PAGE_CODE.CALL_LOGS,
+        requestId: record?.requestId,
+        ...values,
+        tagDesc: tagList?.find(({ code }) => code === values.tag)?.tagDesc,
+        testSetList: values.testSetList?.map((setNo) => {
+          return {
+            setNo,
+            setName: testSetList?.find(({ setNo: _setNo }) => _setNo === setNo)?.setName
+          }
+        }),
+        botNo: record?.botNo,
+        requestTime: record?.requestTime
+      })
+        .then((res) => {
+          // @ts-ignore
+          if (res.success) {
+            message.success("保存成功")
+            setVisible(false)
+            setTimeout(() => {
+              refreshTableData()
+            }, 600)
+          }
+          setIsLoading(false)
+        })
+        .finally(() => setIsLoading(false))
+    }
+  }, [
+    botNo,
+    fetchData,
+    form,
+    mode,
+    record,
+    saveSourceTag,
+    setVisible,
+    tagList,
+    refreshTableData,
+    testSetList
+  ])
+
+  useEffect(() => {
+    if (!visible) {
+      form.resetFields()
+    } else {
+      fetchData()
+      fetchMarkDetail()
+    }
+  }, [form, visible, fetchData, fetchMarkDetail])
+
+  const testSetListOption = useMemo(
+    () =>
+      testSetList?.map((item) => ({
+        ...item,
+        disabled: testSetAddRecords?.find((record) => {
+          return item.setNo === record.setNo
+        })
+      })),
+    [testSetList, testSetAddRecords]
+  )
+
+  const grayColor = "#a9a9a9"
+  const columnsRender = {
+    render: (text) => <div style={{ color: grayColor }}>{text}</div>
+  }
+
+  const dividerTextStyle = {
+    fontSize: "14px",
+    color: "#666666",
+    fontWeight: 400
+  }
+  const COLLAPSE_CLASS = "custom-collapse"
+
+  return (
+    <Modal
+      title={title[mode]}
+      open={visible}
+      onCancel={() => setVisible(false)}
+      onOk={onSubmit}
+      okButtonProps={{
+        // disabled: mode === "setting" && !tagList?.length,
+        loading: isLoading
+      }}
+      destroyOnClose
+    >
+      <Form form={form}>
+        {mode === "manage" && (
+          <Form.List name="sourceTagList" initialValue={[{}]}>
+            {(fields, { add, remove }) => (
+              <>
+                {fields.map(({ name, key, ...restField }, index) => (
+                  <Form.Item key={key} noStyle shouldUpdate>
+                    {({ getFieldValue }) => {
+                      const curTagDesc = getFieldValue("sourceTagList")?.[name]?.tagDesc
+                      const isOld =
+                        tagList?.findIndex(({ tagDesc }) => tagDesc === curTagDesc) === name
+                      return (
+                        <Space align="baseline">
+                          <Form.Item
+                            {...restField}
+                            className="w-96"
+                            label={`标签${index + 1}`}
+                            name={[name, "tagDesc"]}
+                            rules={[
+                              {
+                                required: true,
+                                message: "请输入标签"
+                              },
+                              {
+                                validator: (_, value) => {
+                                  if (!value || isOld) return Promise.resolve()
+                                  if (tagList?.find(({ tagDesc }) => tagDesc === curTagDesc)) {
+                                    return Promise.reject(new Error("该标签名称已存在"))
+                                  }
+                                  return Promise.resolve()
+                                }
+                              }
+                            ]}
+                          >
+                            <Input placeholder="请输入标签" disabled={isOld} />
+                          </Form.Item>
+                          {fields?.length > 1 && !isOld && (
+                            <MinusCircleOutlined
+                              className="text-[16px]"
+                              style={{ color: "#7F56D9" }}
+                              onClick={() => remove(name)}
+                            />
+                          )}
+                          {fields?.length === index + 1 && (
+                            <PlusCircleOutlined
+                              className="text-[16px]"
+                              style={{ color: "#7F56D9" }}
+                              onClick={() => add()}
+                            />
+                          )}
+                        </Space>
+                      )
+                    }}
+                  </Form.Item>
+                ))}
+              </>
+            )}
+          </Form.List>
+        )}
+        {mode === "setting" && (
+          <>
+            <div className="text-[14px] mb-[8px]">标签</div>
+            <Form.Item name="tag" className="mt-0">
+              <Select
+                placeholder="请选择标签"
+                options={tagList}
+                fieldNames={{ label: "tagDesc", value: "code" }}
+              />
+            </Form.Item>
+
+            <div className="text-[14px] mb-[8px]">备注</div>
+            <Form.Item name="remarks">
+              <Input.TextArea placeholder="请输入备注" maxLength={30} showCount />
+            </Form.Item>
+
+            <div className="pb-3" />
+            <Divider />
+
+            <div className="text-[14px] mb-[8px]">添加至测试集</div>
+            <Form.Item name="testSetList">
+              <Select
+                mode="multiple"
+                allowClear
+                style={{ width: "100%" }}
+                placeholder="请选择测试集"
+                defaultValue={[]}
+                fieldNames={{ label: "setName", value: "setNo" }}
+                options={testSetListOption}
+              />
+            </Form.Item>
+            <Collapse
+              ghost
+              expandIcon={() => null}
+              className={COLLAPSE_CLASS}
+              onChange={(keys) => setIsActive(keys.includes("1"))}
+              items={[
+                {
+                  key: "1",
+                  label: (
+                    <Divider orientationMargin={0} style={{ margin: "0 0 16px 0" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                        <span style={dividerTextStyle}>最近5条添加记录</span>
+                        <DownOutlined
+                          style={{
+                            fontSize: "12px",
+                            color: "#A9A9A9",
+                            transform: `rotate(${isActive ? 180 : 0}deg)`,
+                            transition: "transform 0.3s"
+                          }}
+                        />
+                      </div>
+                    </Divider>
+                  ),
+                  children: (
+                    <Table
+                      columns={[
+                        {
+                          dataIndex: "gmtCreated",
+                          width: 180,
+                          render: (text) => <div className="text-[12px] text-[#a9a9a9]">{text}</div>
+                        },
+                        {
+                          render: () => <div className="text-[12px] text-[#a9a9a9]">添加至</div>,
+                          width: 60
+                        },
+                        {
+                          dataIndex: "setName",
+                          align: "right",
+                          render: (text) => <div className="text-[12px] text-[#a9a9a9]">{text}</div>
+                        }
+                      ]}
+                      dataSource={testSetAddRecords}
+                      pagination={false}
+                      showHeader={false}
+                      size="small"
+                      bordered={false}
+                    />
+                  )
+                }
+              ]}
+            />
+          </>
+        )}
+      </Form>
+    </Modal>
+  )
+}
+
+export default TagModal

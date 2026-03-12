@@ -1,0 +1,99 @@
+.common-content {
+  width: 600px;
+  height: 100%;
+  position: relative;
+  padding-top: 60px;
+  width: 600px; //590px;
+  .noPadding {
+    padding: 0 !important;
+  }
+
+  .common-content-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 56px;
+    line-height: 24px;
+    padding: 16px 24px;
+    font-size: 16px;
+    color: rgba(24, 27, 37, 1);
+    font-weight: 500;
+    line-height: 1.5;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+
+    > span {
+      line-height: 30px;
+    }
+  }
+
+  .common-content-extra {
+    float: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .common-content-extra-left {
+    position: absolute;
+    left: 12px;
+  }
+  // 面板的主内容区，高度为视口高度-画布头部高度68-面板头部高度56-面板底部高度76
+  .common-content-container {
+    height: calc(100vh - 68px - 56px - 76px);
+    overflow: auto;
+    padding: 20px 10px 50px 20px;
+    box-sizing: border-box;
+    padding: 24px;
+    & > .ant-tabs > .ant-tabs-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: white;
+      margin-bottom: 0;
+      padding: 0 24px;
+    }
+    & > .ant-tabs > .ant-tabs-content-holder {
+      padding: 24px;
+    }
+  }
+
+  .common-content-container.noPadding {
+    padding: 0;
+  }
+  .common-content-footer {
+    width: 100%;
+    border-top: 1px solid rgba(208, 213, 221, 1);
+    padding: 16px 24px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  // .debug-panel {
+  //   overflow-y: auto;
+  //   position: absolute;
+  //   right: -600px;
+  //   top: 0;
+  //   width: 600px;
+  //   height: 100%;
+  //   border-left: 1px solid #ccc;
+  //   background: #fff;
+
+  //   .header {
+  //     display: flex;
+  //     flex: 0;
+  //     align-items: center;
+  //     padding: 16px 24px;
+  //     font-size: 16px;
+  //     border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+  //     color: rgba(0, 0, 0, 0.88);
+  //     font-weight: 600;
+  //     line-height: 1.5;
+  //   }
+  // }
+}

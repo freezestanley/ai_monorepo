@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>工作空间管理平台</title>
+    <script crossorigin="anonymous" src="https://seraph-cdn.zhongan.io/js/monitor.2.4.0.js"></script>
+    <script>
+      function getEnv() {
+        var str = location.hostname
+        var regex = /^aigc-admin-(\w+)\.in\.za$/
+        var match = str.match(regex)
+        if (match) {
+          return match[1]
+        }
+        var prdENv = ["aigc-admin.in.za", "aigc-admin.zhonganonline.com", "aigc-admin.zhongan.com"]
+        if (prdENv.includes(str)) {
+          return "prd"
+        }
+        var testEnv = ["aigc-admin-test.zhonganonline.com", "aigc-admin-test.zhongan.com"]
+        if (testEnv.includes(str)) {
+          return "test"
+        }
+        var preEnv = ["aigc-admin-pre.zhonganonline.com", "aigc-admin-pre.zhongan.com"]
+        if (preEnv.includes(str)) {
+          return "pre"
+        }
+        // 保险域名规则
+        var insureRegex = /^za-aigc-platform-admin-static\.(\w+)\.za\.biz$/
+        var insureMatch = str.match(insureRegex)
+        if (insureMatch) {
+          return insureMatch[1]
+        } else {
+          return "test"
+        }
+      }
+      window.MonitorJS({
+        seraphId: "d7612ed03933b8ec",    // 必填, 站点ID，六翼前端监控接入管理中申请站点ID
+        env: getEnv() || "test",    // 必填, 环境, 可取值 test、pre、prd, 对应六翼监控平台测试、预发、生产环境 
+        H5Version: "1.0.0",    // 不需要区分版本可以填 1.0.0,
+        // debug: true,    // 是否开启调试模式
+        fstReportTime: 500   // 用户进入页面未交互n毫秒后上报首屏信息，默认7000
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

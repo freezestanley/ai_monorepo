@@ -1,0 +1,49 @@
+.search-box {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+.knowledge-extraction-add {
+  .add-box {
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #eee;
+  }
+  .item-box {
+    max-width: 800px;
+    margin-bottom: 40px;
+    :global {
+      .ant-form-item-label {
+        width: 150px;
+        font-weight: bold;
+      }
+      .ant-space,
+      .ant-radio-group,
+      .ant-input-number,
+      .ant-space-vertica {
+        width: 100%;
+      }
+    }
+  }
+  .form-list {
+    display: flex;
+    flex-direction: column;
+    :global {
+      .ant-space {
+        .ant-space-item:nth-child(1),
+        .ant-space-item:nth-child(2) {
+          width: 100%;
+        }
+        .anticon-delete {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

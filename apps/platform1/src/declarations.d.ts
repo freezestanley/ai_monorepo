@@ -1,0 +1,5 @@
+declare module "@antv/xflow"
+declare module "@ant-design/icons"
+declare module "lodash"
+declare module "*.module.scss"
+declare module "*.scss"

@@ -1,0 +1,49 @@
+.plugins-management-module {
+  padding: 20px;
+  padding-top: 0px;
+
+  .divider {
+    font-size: 18px;
+    font-weight: 900;
+    margin: 40px 0;
+    letter-spacing: 10px;
+  }
+  :global {
+    .ant-card-body {
+      padding: 15px;
+    }
+  }
+}
+.tabpane-wrapper {
+  padding: 10px 20px;
+}
+.share-line {
+  display: flex;
+  align-items: baseline;
+
+  .share-line-label {
+    margin-right: 20px;
+  }
+}
+.desc {
+  color: #666;
+  margin-left: 20px;
+}
+.workspace {
+  width: 400px;
+  margin-bottom: 20px;
+
+  :global {
+    .ant-form-item {
+      margin-bottom: 10px;
+    }
+  }
+  .add-share {
+    color: #7f56d9;
+    margin-left: 10px;
+  }
+}
+.workspace-title {
+  padding-left: 100px;
+  margin-bottom: 10px;
+}

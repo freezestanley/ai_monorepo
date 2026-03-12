@@ -1,0 +1,135 @@
+:global {
+  .ant-tag {
+    border-radius: 6px;
+    &.blue {
+      color: #336df4;
+      border-color: #336df4;
+    }
+    &.indigo {
+      color: #5b65f5;
+      border-color: #5b65f5;
+    }
+    &.purple {
+      color: #8c55ec;
+      border-color: #8c55ec;
+    }
+    &.wathet {
+      color: #25b0e7;
+      border-color: #25b0e7;
+    }
+    &.lime {
+      color: #91ad00;
+      border-color: #91ad00;
+    }
+    &.green {
+      color: #35bd4b;
+      border-color: #35bd4b;
+    }
+    &.turquoise {
+      color: #1fa18f;
+      border-color: #1fa18f;
+    }
+    &.orange {
+      color: #db7018;
+      border-color: #db7018;
+    }
+    &.yellow {
+      color: #ffc60a;
+      border-color: #ffc60a;
+    }
+    &.red {
+      color: #f54a45;
+      border-color: #f54a45;
+    }
+    &.violet {
+      color: #bf3dbf;
+      border-color: #bf3dbf;
+    }
+    &.carmine {
+      color: #df58a5;
+      border-color: #df58a5;
+    }
+
+    /* fallback 20 colors */
+    &.azure {
+      color: #3fa7ff;
+      border-color: #3fa7ff;
+    }
+    &.teal {
+      color: #1abc9c;
+      border-color: #1abc9c;
+    }
+    &.sky {
+      color: #74b9ff;
+      border-color: #74b9ff;
+    }
+    &.navy {
+      color: #34495e;
+      border-color: #34495e;
+    }
+    &.cyan {
+      color: #00bcd4;
+      border-color: #00bcd4;
+    }
+    &.aqua {
+      color: #00ffff;
+      border-color: #00ffff;
+    }
+    &.mint {
+      color: #2ecc71;
+      border-color: #2ecc71;
+    }
+    &.emerald {
+      color: #009f6b;
+      border-color: #009f6b;
+    }
+    &.forest {
+      color: #228b22;
+      border-color: #228b22;
+    }
+    &.seagreen {
+      color: #2e8b57;
+      border-color: #2e8b57;
+    }
+    &.olive {
+      color: #808000;
+      border-color: #808000;
+    }
+    &.gold {
+      color: #d4af37;
+      border-color: #d4af37;
+    }
+    &.amber {
+      color: #ffbf00;
+      border-color: #ffbf00;
+    }
+    &.peach {
+      color: #ff9f80;
+      border-color: #ff9f80;
+    }
+    &.coral {
+      color: #ff7f50;
+      border-color: #ff7f50;
+    }
+    &.salmon {
+      color: #fa8072;
+      border-color: #fa8072;
+    }
+    &.rose {
+      color: #ff5c8a;
+      border-color: #ff5c8a;
+    }
+    &.magenta {
+      color: #ff00ff;
+      border-color: #ff00ff;
+    }
+    &.plum {
+      color: #8e4585;
+      border-color: #8e4585;
+    }
+    &.lavender {
+      color: #b57edc;
+      border-color: #b57edc;
+    }
+  }
+}

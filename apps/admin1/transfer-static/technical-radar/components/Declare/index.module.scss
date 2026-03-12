@@ -1,0 +1,219 @@
+.declare {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+
+  .declareBtn {
+    height: 32px;
+    padding: 0 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #7c5cfc; // 紫色背景
+    border-color: #7c5cfc;
+
+    &:hover {
+      background-color: #6b4ce6;
+      border-color: #6b4ce6;
+    }
+  }
+
+  .historyBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #7c5cfc; // 紫色图标
+    font-size: 18px;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: rgba(124, 92, 252, 0.1);
+    }
+  }
+}
+
+.declare-modal {
+  .ant-modal-header {
+    margin-bottom: 20px !important;
+  }
+
+  /* 设置表单控件 hover 和 focus 时的边框颜色为紫色 */
+  .ant-input:hover,
+  .ant-input:focus,
+  .ant-input-focused,
+  textarea:hover,
+  textarea:focus,
+  .ant-input-affix-wrapper:hover,
+  .ant-input-affix-wrapper:focus,
+  .ant-input-affix-wrapper-focused {
+    border-color: #7c5cfc !important;
+    box-shadow: 0 0 0 2px rgba(124, 92, 252, 0.1) !important;
+  }
+
+  /* 自定义减号按钮样式 */
+  .minus-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; /* 与 antd 默认按钮高度一致 */
+    height: 32px;
+    border: 1px solid #d9d9d9; /* 默认边框颜色 */
+    border-radius: 6px; /* 圆角与加号按钮一致 */
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: rgba(0, 0, 0, 0.88); /* 默认文字颜色 */
+
+    &:hover {
+      border-color: #7c5cfc;
+      color: #7c5cfc;
+      background-color: #fff;
+    }
+
+    .anticon {
+      font-size: 14px;
+    }
+  }
+}
+
+.declare-confirm-modal {
+  .ant-modal-confirm-title {
+    font-weight: bold;
+  }
+}
+
+/* 历史记录 Popover 样式 */
+.historyPopover {
+  .ant-popover-inner {
+    padding: 0;
+    border-radius: 8px;
+    box-shadow:
+      0 6px 16px 0 rgba(0, 0, 0, 0.08),
+      0 3px 6px -4px rgba(0, 0, 0, 0.12),
+      0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .ant-popover-arrow {
+    display: none;
+  }
+}
+
+.historyContainer {
+  width: 280px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.historyTitle {
+  padding: 0px 16px 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.historyList {
+  max-height: 238px; /* 约5条记录的高度 (50px * 5 + padding) */
+  overflow-y: auto;
+  padding: 8px 0;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+.historyItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f9fafb;
+  }
+}
+
+.itemName {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 160px;
+  /* 增加一点行高以垂直居中 */
+  line-height: 24px;
+}
+
+.itemStatus {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-weight: 500;
+  white-space: nowrap;
+  /* 确保状态标签宽度一致 */
+  min-width: 60px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* 状态样式 */
+.statusPending {
+  color: #d97706; // 橙色文字
+  background-color: #fef3c7; // 橙色背景
+  border-color: #d97706; // 橙色边框
+}
+
+.statusRejected {
+  color: #991b1b; // 深红色文字
+  background-color: #fee2e2; // 红色背景
+  border-color: #991b1b; // 深红色边框
+}
+
+.statusApproved {
+  color: #16a34a; // 绿色文字
+  background-color: #f0fdf4; // 浅绿色背景（修改为更浅的绿色，接近截图）
+  border-color: #16a34a; // 绿色边框
+}
+
+.loadingWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.noMoreText {
+  text-align: center;
+  font-size: 12px;
+  color: #9ca3af;
+  padding: 8px 0;
+}
+
+.declareModal {
+  :global {
+    .ant-input:focus,
+    .ant-input-focused,
+    .ant-input:hover,
+    .ant-select:hover .ant-select-selector,
+    .ant-select-focused .ant-select-selector {
+      border-color: var(--primary-color);
+    }
+  }
+}

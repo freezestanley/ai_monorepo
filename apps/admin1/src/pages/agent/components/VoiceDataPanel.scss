@@ -1,0 +1,111 @@
+// 漏斗图样式自定义
+.funnel-chart-container {
+  min-height: 300px;
+  .g2-funnel {
+    // 漏斗图形状调整
+    .g2-element {
+      // 确保漏斗形状更加传统
+      stroke: #fff;
+      stroke-width: 2px;
+    }
+
+    // 标签样式
+    .g2-label {
+      font-family:
+        -apple-system, BlinkMacSystemFont, "Segmented UI", Roboto, "Helvetica Neue", Arial,
+        sans-serif;
+
+      // 右侧百分比标签
+      &.g2-label-right {
+        font-size: 14px;
+        font-weight: 500;
+        fill: #666;
+      }
+    }
+
+    // 图例样式
+    .g2-legend {
+      .g2-legend-item {
+        margin-right: 16px;
+
+        .g2-legend-marker {
+          border-radius: 2px;
+        }
+
+        .g2-legend-text {
+          font-size: 12px;
+          color: #666;
+        }
+      }
+    }
+  }
+
+  // 工具提示样式
+  .g2-tooltip {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    .g2-tooltip-title {
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .g2-tooltip-list-item {
+      color: #fff;
+      font-size: 12px;
+
+      .g2-tooltip-marker {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+// 传统漏斗图形状优化
+.traditional-funnel {
+  .g2-funnel {
+    // 调整漏斗图的整体布局
+    .g2-element {
+      // 使漏斗更加平滑和传统
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 0.8;
+        stroke-width: 3px;
+      }
+    }
+
+    // 确保标签位置正确
+    .g2-label {
+      pointer-events: none;
+
+      // 右侧标签定位
+      &.g2-label-right {
+        text-anchor: start;
+      }
+    }
+  }
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .funnel-chart-container {
+    .g2-funnel {
+      .g2-label {
+        font-size: 12px;
+      }
+
+      .g2-legend {
+        .g2-legend-item {
+          margin-right: 8px;
+
+          .g2-legend-text {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.custom-components {
+  position: relative;
+  height: 100%;
+  > button {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    cursor: pointer;
+    z-index: 3;
+  }
+  &.hide-debug-panel {
+    .debug-panel {
+      // display: none !important;
+    }
+  }
+}
+
+@keyframes fastSlideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fast-slide-in-right {
+  animation-name: fastSlideInRight;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fastSlideOutRight {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+.fast-slide-out-right {
+  animation-name: fastSlideOutRight;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}

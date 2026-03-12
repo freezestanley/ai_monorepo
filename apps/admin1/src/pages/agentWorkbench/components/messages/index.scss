@@ -1,0 +1,239 @@
+:root {
+  --message-wrapper-width: 100%;
+  --message-item-max-width: 100%;
+  --message-wrapper-padding: 15px 0 50px 0;
+  --message-item-wrapper-padding: 8px 20px;
+  --message-word-handler-left: 0px;
+}
+.message-wrapper {
+  width: var(--message-wrapper-width);
+  margin: 0 auto;
+  // height: 100%;
+  padding: var(--message-wrapper-padding);
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.content-word-wrapper {
+  display: flex;
+  padding: var(--message-item-wrapper-padding);
+}
+.content-word-wrapper:hover .content-word-handler {
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+}
+
+.content-word-feedback {
+  position: absolute;
+  right: 15px;
+  bottom: 23px;
+  border-top: 1px solid #eee;
+  width: calc(100% - 65px);
+  text-align: right;
+  padding-top: 5px;
+  img {
+    background-color: transparent;
+    width: 14px;
+    margin: 0 5px;
+    margin-top: -2px;
+  }
+}
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.user-word {
+  justify-content: flex-end;
+  &:hover {
+    .chat-words-wrapper {
+      background-color: #b8b8f8 !important;
+    }
+  }
+  .content-word-center {
+    align-items: flex-start;
+  }
+  .content-word-handler {
+    left: var(--message-word-handler-left);
+  }
+
+  .user-avatar {
+    margin-left: 8px;
+  }
+  .content-word {
+    justify-content: flex-end;
+
+    .chat-words-wrapper {
+      background-color: #d9d9ff;
+      padding: 12px 16px;
+      border-radius: 16px 0px 16px 16px;
+      min-width: auto;
+    }
+    &,
+    p {
+      color: #000;
+    }
+  }
+}
+
+.gpt-word {
+  flex-direction: column;
+  align-items: flex-start;
+  &:hover {
+    .chat-words-wrapper {
+      background-color: #eaeaf0;
+    }
+  }
+  .content-word-center {
+    max-width: 800px;
+    justify-content: flex-end;
+  }
+  .user-avatar {
+    margin-right: 8px;
+  }
+  .chat-words-wrapper {
+    background-color: #fff;
+    padding: 12px 16px;
+    border-radius: 0px 16px 16px 16px;
+    padding-bottom: 50px;
+    img {
+      max-width: 100%;
+    }
+    &.generating {
+      padding-bottom: 12px;
+    }
+    &,
+    p {
+      color: #000;
+    }
+  }
+}
+
+.content-word-center {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+}
+.content-word {
+  display: flex;
+  align-items: center;
+}
+.chat-words-wrapper {
+  min-height: 40px;
+  max-width: var(--message-item-max-width);
+  overflow-x: auto;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: normal;
+  min-width: 136px;
+}
+.chat-words-wrapper p {
+  margin: 0;
+  line-height: 22px;
+  font-size: 14px;
+  font-weight: 400;
+  word-break: break-all;
+}
+
+.editing {
+  background-color: #f5f5f5;
+  border: 1px dashed #999;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  flex: 1;
+}
+
+.content-word-handler {
+  position: absolute;
+  bottom: -16px;
+  left: 40px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.message-handler-icon {
+  margin: 0 8px;
+  color: #666666;
+  cursor: pointer;
+}
+
+.stop-generate {
+  border-radius: 8px;
+  border: 0.503px solid #dcdcdc;
+  padding: 6px 8px;
+  cursor: pointer;
+  color: #000;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: #fff;
+  margin-left: 12px;
+}
+
+body[device-type="mobile"],
+body[device-type="small"] {
+  .content-word-wrapper:hover .content-word-handler {
+    visibility: hidden;
+    opacity: unset;
+  }
+  .user-word {
+    &:hover {
+      .chat-words-wrapper {
+        background-color: #d9d9ff !important;
+      }
+    }
+  }
+  .gpt-word {
+    .chat-words-wrapper {
+      background-color: #f8f8f9 !important;
+    }
+    &:hover {
+      .chat-words-wrapper {
+        background-color: #f8f8f9 !important;
+      }
+    }
+  }
+}
+
+.submit-btn {
+  padding: 6px 108px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 20px auto;
+  display: block;
+}
+
+.dislike-text {
+  padding: 10px;
+  background: #eee;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.submit-tip {
+  font-size: 12px;
+  color: #ccc;
+  margin-left: 60px;
+  position: absolute;
+}
+
+.message-feed-back-icon {
+  margin: 0 8px;
+  cursor: pointer;
+  width: 16px;
+  vertical-align: middle;
+}
+
+.markdown-body {
+  background-color: inherit;
+}

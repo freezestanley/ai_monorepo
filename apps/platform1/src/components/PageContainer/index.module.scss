@@ -1,0 +1,39 @@
+.page-container {
+  .header {
+    border-radius: 20px;
+    // background: #f7f8fa;
+    padding: 24px 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    .title {
+      color: #000;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      .anticon-left {
+        margin-right: 10px;
+      }
+    }
+    .descriptions {
+      font-size: 16px;
+      margin-left: 20px;
+      color: #666;
+      font-weight: normal;
+    }
+  }
+
+  .container {
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    > div {
+      padding: 24px 20px;
+      box-sizing: border-box;
+      border-radius: 20px;
+      background: #f7f8fa;
+    }
+  }
+}

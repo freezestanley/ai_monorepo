@@ -1,0 +1,89 @@
+/* DebugInfoPanel 专用：让 CodeMirror 的滚动条更细，仅对加了 className="cm-thin" 的编辑器生效 */
+
+.cm-thin {
+  /* CodeMirror v6 主滚动容器 */
+  .cm-scroller {
+    overscroll-behavior: contain; /* 避免嵌套滚动影响 */
+
+    /* Firefox：细滚动条与颜色（thumb / track） */
+    scrollbar-width: thin; /* auto | thin | none */
+    scrollbar-color: rgba(154, 154, 154, 0.25) transparent;
+  }
+
+  /* WebKit 系（Chrome / Edge / Safari） */
+  .cm-scroller::-webkit-scrollbar {
+    width: 1px;  /* 垂直滚动条宽度 */
+    height: 1px; /* 水平滚动条高度 */
+  }
+  .cm-scroller::-webkit-scrollbar-track {
+    background: transparent; /* 轨道透明，减弱存在感 */
+  }
+  .cm-scroller::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.22);
+    border-radius: 8px;
+    border: 1px solid transparent; /* 让圆角更明显 */
+    background-clip: padding-box;
+  }
+  .cm-scroller:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(152, 152, 152, 0.35); /* 悬停时略加深，提高可见性 */
+  }
+  .cm-scroller::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* 若你有深浅主题可切换，可按需覆盖 */
+  &.light {
+    .cm-scroller {
+      scrollbar-color: rgba(235, 235, 235, 0.22) transparent;
+    }
+  }
+  &.dark {
+    .cm-scroller {
+      scrollbar-color: rgba(255, 255, 255, 0.28) transparent;
+    }
+    .cm-scroller::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.28);
+    }
+    .cm-scroller:hover::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+}
+
+/* 甘特图容器：去掉 X 方向滚动条 */
+.gantt-wrap {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* 自定义 tooltip 外观（AntV:G2 默认容器为 .g2-tooltip） */
+.gantt-wrap .g2-tooltip {
+  padding: 8px 12px !important;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+/* 自定义 tooltip 内容块（来自 customContent 返回的 HTML） */
+.gantt-tooltip {
+  min-width: 180px;
+}
+.gantt-tooltip .tt-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1f2937; /* slate-800 */
+  margin-bottom: 8px;
+}
+.gantt-tooltip .tt-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #4b5563; /* slate-600 */
+}
+.gantt-tooltip .tt-row + .tt-row {
+  margin-top: 4px;
+}

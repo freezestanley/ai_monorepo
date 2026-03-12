@@ -1,0 +1,6 @@
+// 模型广场卡片专用样式
+.model-series-card {
+  // 覆盖固定高度，使用最小高度以适应更多内容
+//   min-height: 212px !important;
+  height: auto !important;
+}

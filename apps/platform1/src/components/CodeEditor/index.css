@@ -1,0 +1,31 @@
+.code-mirror {
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+.code-mirror:focus {
+  border: 1px solid #d9d9d9;
+}
+.cm-focused {
+  outline: none !important;
+}
+
+.code-mirror-large-icon {
+  font-size: 22px;
+  color: #7f56d9;
+}
+
+.code-mirror-util {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 5px 0;
+}
+body > svg {
+  path {
+    fill: unset;
+  }
+}

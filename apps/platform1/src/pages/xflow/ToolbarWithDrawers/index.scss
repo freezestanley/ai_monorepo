@@ -1,0 +1,48 @@
+.tool-bar-wrapper {
+  height: 32px;
+  width: 98%; //100%;
+  position: relative;
+  // border-bottom: 1px solid var(---, #e1e4ea);
+  .skill-status {
+    color: var(--6, #ff7d00);
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 2px;
+    background: var(--1, #fff7e8);
+    display: inline-block;
+    padding: 4px 8px;
+  }
+  .ant-tabs {
+    .ant-tabs-nav {
+      &::before {
+        border-bottom: none !important;
+      }
+      margin-bottom: 0;
+    }
+
+    .ant-tabs-tab {
+      &::after {
+        border-bottom: none !important;
+      }
+
+      &.ant-tabs-tab-active {
+        border-bottom: none !important;
+
+        .ant-tabs-tab-btn {
+          border-bottom: none !important;
+        }
+      }
+    }
+  }
+}
+
+.tool-bar-wrapper-ai {
+  border: none !important;
+  margin-bottom: 20px;
+  height: 60px;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+.w-full-important {
+  width: 100% !important;
+}

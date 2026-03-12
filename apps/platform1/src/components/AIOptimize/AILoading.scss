@@ -1,0 +1,30 @@
+.ai-loading {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  padding: 8px 0px;
+
+  .ai-loading-text {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    background: linear-gradient(90deg, #ff55c1 0%, #7232ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}

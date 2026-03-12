@@ -1,0 +1,27 @@
+.container {
+  padding: 16px;
+  background-color: #fff;
+  min-height: 100%;
+}
+
+.tableContainer {
+  margin-top: 16px;
+
+  background-color: #fff;
+  border-radius: 4px;
+
+  :global {
+    .table-style-v2-even-row {
+      background-color: #fff;
+    }
+
+    .table-style-v2-odd-row {
+      background-color: #fafafa;
+    }
+
+    .highlight {
+      background-color: #ffc069;
+      padding: 0;
+    }
+  }
+}

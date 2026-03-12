@@ -1,0 +1,23 @@
+.large-icon {
+  top: 6px!important;
+  right: 6px!important;
+}
+
+.system-msg-tooltip {
+  padding: 5px 10px;
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+}
+.agent-workbench-form {
+  .form-item_system-message {
+    .ant-form-item-extra {
+      min-height: 0;
+    }
+  }
+  .system-msg-optimize-btn {
+    position: absolute;
+    top: 4px;
+    right: 30px;
+  }
+}

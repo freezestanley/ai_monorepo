@@ -1,0 +1,9 @@
+:root {
+  --primary-color: #8c55ec; // 默认的主题色
+  --menu-select-bg-color: #f3f0ff; // 菜单选中背景色
+  --radius-xs: 4px; // 适用于标签、复选框等原子组件
+  --radius-s: 6px; // 适用于按钮、输入框、全局提示等小型组件
+  --radius-m: 8px; // 适用于工具栏等承载小型组件卡片容器组件
+  --radius-l: 10px; // 适用于承载较复杂内容的大卡片容器组件
+  --radius-xl: 50%; // 适用于需要聚焦、提升用户点击率或关注度的组件
+}

@@ -1,0 +1,59 @@
+.form-container-wrapper {
+  // z-index: 19;
+  // position: absolute;
+  padding: 10px;
+  // bottom: 0;
+  width: 100%;
+  border-top: 1px solid #f1f1f1;
+  background-color: #ffffff;
+}
+.form-container {
+  width: 100%;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+.form {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f9;
+  border-radius: 20px;
+  transition: border-color 0.3s ease-in-out;
+  /* 设置透明边框颜色 */
+  border: 1px solid transparent;
+  &:focus-within {
+    border: 1px solid #7F56D9;
+  }
+}
+.textarea {
+  display: flex;
+  flex-grow: 1;
+  padding: 12px;
+  min-height: 76px;
+  border: none;
+  outline: none;
+  color: #030516;
+  resize: none;
+  border-radius: 20px;
+  background-color: #f8f8f9;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.submit-button {
+  width: 48px;
+  height: 48px;
+  background-image: url('../../../../assets/img/send.png');//url('https://alicdn.zaticdn.com/zaip/zaip-toolweb-file-service/upload/gatWnkAhgJ1n782yfT7hmZ-send.png');
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  margin-left: 20px;
+  margin-right: 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  background-color: #7F56D9;
+}
+.submit-button:disabled {
+  cursor: not-allowed;
+}

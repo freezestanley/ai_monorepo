@@ -1,0 +1,31 @@
+.share-setting-form {
+  min-height: 270px;
+  .pr-24 {
+    padding-right: 24px;
+  }
+  .radio-item {
+    margin-bottom: 16px;
+    line-height: 32px;
+    padding-left: 6px;
+  }
+  .share-tips {
+    color: #bababa;
+  }
+  .shared-list-wrap {
+    .shared-list-content {
+      padding-right: 10px;
+      overflow-y: auto;
+      max-height: 280px;
+    }
+    .header-col {
+      line-height: 32px;
+      text-align: center;
+    }
+    .center-col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+    }
+  }
+}

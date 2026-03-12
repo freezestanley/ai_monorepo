@@ -1,0 +1,174 @@
+.base-node-comp {
+  .judge-tip {
+    top: 1px;
+    position: relative;
+    margin-left: 5px;
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 12px;
+  }
+}
+.fallback-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgba(24, 27, 37, 1);
+}
+.vertical-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 60px;
+  left: 27px;
+  width: 2px;
+  background-color: rgba(182, 146, 246, 0.3);
+}
+.condition-label {
+  background-color: rgba(127, 86, 217, 1);
+  color: white;
+  padding: 1px 5px;
+  border-radius: 2px;
+  line-height: 22px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 7px;
+}
+.operator-text {
+  position: absolute;
+  top: calc(50% - 30px);
+  transform: translateY(-50%);
+  left: 16px;
+  cursor: pointer;
+  color: #7f56d9;
+  background-color: #e9defc;
+  padding: 2px 5px;
+  border-radius: 2px;
+  &:hover {
+    color: #b692f6;
+  }
+}
+
+.condition-node {
+  .header {
+    display: flex;
+    flex: 0;
+    align-items: center;
+    padding: 16px 24px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+    color: rgba(0, 0, 0, 0.88);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+}
+// 展开的调试面板
+.xflow-json-schema-form {
+  height: calc(100vh - 68px);
+  z-index: 100 !important;
+  box-shadow: rgba(51, 51, 51, 0.5) !important;
+  .prompt-node-wrapper,
+  .common-node-wrapper {
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: width 0.3s ease-in-out;
+    display: flex;
+  }
+
+  .base-node-comp {
+    width: 600px;
+    height: 100%;
+    display: flex;
+  }
+
+  .debug-panel {
+    width: 600px;
+    height: 100%;
+    background-color: white;
+    border-left: 1px solid #ededed;
+  }
+}
+
+.form-input-wrapper {
+  .ant-drawer-body {
+    padding: 0;
+  }
+}
+
+.globalSelect {
+  min-width: 135px;
+
+  .ant-select-selection-overflow-item {
+    // width: 100%;
+  }
+}
+
+.globalSelect.end-global-select {
+  max-width: 250px;
+}
+
+.ant-tooltip-content {
+  // width: 350px;
+}
+
+.advance_setting {
+  background-color: #fafafa;
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  & > .col_line {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    & > div {
+      flex: 0;
+      padding: 0 0px 0 10px;
+    }
+    & > div:first-child {
+      flex: 0;
+    }
+    & > div:nth-child(2) {
+      flex: 0 1 20%;
+      text-align: right;
+    }
+    & > div:nth-child(3) {
+      flex: 1;
+    }
+  }
+  & > .col_line:last-child {
+    flex: 1;
+    margin-bottom: 0px;
+  }
+}
+
+.promptElfTag {
+  background: #7f56d9;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  min-width: 36px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.promptLineTag {
+  position: relative;
+  height: 100%;
+  &::before {
+    content: "";
+    width: 1px;
+    height: 90%;
+    background: #7f56d9;
+    position: absolute;
+    left: 50%;
+    top: 2%;
+    transform: translateX(-50%);
+  }
+  .promptElfTag {
+    top: 45%;
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,357 @@
+.html-preview-container {
+  height: calc(100vh - 225px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 图片预览容器 */
+.image-preview-wrapper {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  min-height: 0;
+  height: 100%;
+  // background: #f5f5f5;
+
+  // 自定义滚动条样式
+  scrollbar-width: thin;
+  scrollbar-color: rgba(200, 200, 200, 0.5) transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(200, 200, 200, 0.5);
+    border-radius: 3px;
+
+    &:hover {
+      background: rgba(150, 150, 150, 0.7);
+    }
+  }
+}
+
+.image-preview-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  // padding: 20px;
+  // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.image-preview-toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  button {
+    color: white !important;
+    background: rgba(0, 0, 0, 0.45) !important;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.65) !important;
+    }
+  }
+}
+
+/* 工具栏 */
+.html-preview-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 0px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  margin-top: -15px;
+}
+
+.html-preview-toolbar-spacer {
+  flex: 1;
+}
+
+.html-preview-toolbar-icons {
+  display: flex;
+  align-items: center;
+}
+
+.html-preview-icon-btn {
+  padding: 4px 8px !important;
+  font-size: 14px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+  &:hover {
+    color: #667eea;
+  }
+}
+
+/* 加载状态 */
+.html-preview-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  color: #6b7280;
+
+  p {
+    font-size: 14px;
+  }
+}
+
+/* 预览包装器 */
+.html-preview-wrapper {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
+  min-height: 0;
+  height: 100%;
+
+  // 自定义滚动条样式
+  scrollbar-width: thin;
+  scrollbar-color: rgba(200, 200, 200, 0.5) transparent;
+
+  // Chrome/Safari/Edge 滚动条样式
+  &::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(200, 200, 200, 0.5);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: rgba(150, 150, 150, 0.3);
+    }
+  }
+
+  &.device-desktop {
+    .html-preview-iframe {
+      width: 100%;
+      max-width: 1200px;
+      height: 100%;
+    //   border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: white;
+    
+}
+  }
+
+  &.device-mobile {
+    .html-preview-iframe {
+      width: 300px;
+      height: 600px;
+      border: 6px solid #1f2937;
+      border-radius: 40px;
+      background: white;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      position: relative;
+      
+
+      // 模拟手机刘海
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        height: 28px;
+        background: #1f2937;
+        border-radius: 0 0 20px 20px;
+        z-index: 10;
+      }
+
+      // 模拟手机底部
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 4px;
+        background: #1f2937;
+        border-radius: 2px;
+        z-index: 10;
+      }
+    }
+  }
+
+  &.fullscreen {
+    padding: 0;
+    background: #000;
+    height: 100%;
+
+    .html-preview-iframe {
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      border: none !important;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &.device-desktop {
+      .html-preview-iframe {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+      }
+    }
+
+    &.device-mobile {
+      .html-preview-iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+  }
+}
+
+.html-preview-iframe {
+  border: none;
+  display: block;
+  background: white;
+
+  // 注意：iframe 内部的滚动条样式需要在 HTML 内容的 <style> 中定义
+  // 或者通过注入 CSS 来实现
+}
+
+/* 全屏模态框 */
+.html-preview-fullscreen-modal {
+  .ant-modal {
+    margin: 0 !important;
+    max-width: calc(100vw - 0px) !important;
+  }
+
+  .ant-modal-content {
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ant-modal-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px 16px;
+    flex-shrink: 0;
+    margin-bottom: 0px !important;
+  }
+
+  .ant-modal-body {
+    flex: 1;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh !important;
+  }
+
+  .ant-modal-close {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+.html-preview-fullscreen-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.html-preview-fullscreen-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+//   padding: 8px 16px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+    //   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    margin-top: -10px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .html-preview-wrapper {
+    padding: 8px;
+
+    &.device-desktop {
+      .html-preview-iframe {
+        max-width: 100%;
+        height: 600px;
+      }
+    }
+
+    &.device-mobile {
+      .html-preview-iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 375 / 812;
+        border-width: 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .html-preview-wrapper {
+    &.device-mobile {
+      .html-preview-iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 375 / 812;
+        border-width: 4px;
+      }
+    }
+  }
+
+  .html-preview-toolbar {
+    padding: 8px 12px;
+
+    .ant-space {
+      width: 100%;
+      justify-content: space-around;
+    }
+  }
+}
+

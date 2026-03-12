@@ -1,0 +1,17 @@
+ .batch-test-drawer {
+   .ant-drawer-body {
+     overflow: visible;
+
+   }
+
+ }
+
+ .test-component-wrapper {
+   position: relative;
+   min-height: 100%;
+   .back-icon {
+     position: absolute;
+     right: 20px;
+     top: -40px;
+   }
+ }

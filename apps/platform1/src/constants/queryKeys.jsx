@@ -1,0 +1,282 @@
+/*
+ * @Author: dyton
+ * @Date: 2023-10-16 14:52:58
+ * @Descripttion: 文件描述
+ * @LastEditors:  xuyang003@zhongan.com
+ * @LastEditTime: 2024-05-22 18:27:21
+ * @FilePath: /za-aigc-platform-admin-static/src/constants/queryKeys.jsx
+ * Copyright (c) 2023 by ZA-智能中台, All Rights Reserved.
+ */
+export const QUERY_KEYS = {
+  // 知识库相关queryKey
+  USER_LIST: "userList",
+  KNOWLEDGE_LIST: "knowledgeList",
+  FAQ_LIST_BY_PAGE: "faqListByPage",
+  FAQ_LIST: "faqList",
+  KNOWLEDGE_LIST_MENU: "knowledgeListMenu", // Menu
+  KNOWLEDGE_DICTIONARY: "knowledgeDictionary",
+  DOCUMENT_LIST_BY_PAGE: "document_list_by_page",
+  PAGE_SHARING: "pageSharing",
+  EMBEDDING_TYPE: "embeddingType",
+  KNOWLEDGE_BASE_CONFIG: "knowledgeBaseConfig",
+  UPLOAD_RESULT: "uploadResult",
+  UPLOAD_DOCUMENT: "uploadDocument",
+  GENERATE_FAQ: "generateFaq",
+  GENERATE_RESULT_LIST_BY_PAGE: "generateResultListByPage",
+  DELETE_GENERATE_RESULT: "deleteGenerateResult",
+  ADD_FAQ: "addFaq",
+  CANCEL_GENERATE_FAQ: "cancelGenerateFaq",
+  CATALOG_LIST: "catalog_list",
+  UPLOAD_RESULT_BY_CATALOG: "uploadResultByCatalog",
+  // 知识萃取相关Key
+  EXTRACTOR_LIST: "extractorList",
+  EXTRACTOR_DETAIL: "extractorDetail",
+  EXTRACTOR_OPTIONS: "extractorListOptions",
+  TASK_TYPE_LIST: "taskTypeList",
+  TASK_TYPE_LIST_SKILL: "taskTypeListSkill",
+  TASK_LIST: "taskList",
+  TASK_DETAIL: "taskDetail",
+  SKILL_TOTAL: "skillTotal",
+  KNOWLEDGECLASS: "knowledgeClassApi",
+  ALL_INSTANCE: "allInstance",
+  SAME_QUESTIONS_FOR_SOLUTIONS: "SameQuestionsForSolutionApi",
+  // 知识萃取批次-知识工程
+  BATCH_EXTRACTOR_DETAIL: "batchExtractorDetail",
+  BATCH_EXTRACTOR_SAVE: "batchExtractorSave",
+  BATCH_EXTRACTOR_LISTBYPAGE: "batchExtractorListByPage",
+  BATCH_EXTRACTOR_RESULT_RECEIVE: "batchExtractorResultReceive",
+  BATCH_EXTRACTOR_REFERENCE_LISTBYPAGE: "batchExtractorReferenceListByPage",
+  BATCH_EXTRACTOR_INTENTION_LISTBYPAGE: "batchExtractorIntentionListByPage",
+  BATCH_EXTRACTOR_INTENTION_FERENCE_GETVOICEURL: "batchExtractorIntentionFerenceGetvoiceUrl",
+  //数据管理-知识工程二期
+  DATA_MANAGEMENT_ORIGINLIST: "dataManagementOriginList",
+  DATA_SET_INFO_LIST: "dataSetInfoList",
+  DATA_SET_INFO_DETAIL: "dataSetInfoDetail",
+  LIST_LABE_OPERATE_BY_DS_ID: "listLabeOperateByDsId",
+  LIST_ALL_DS_INFO: "listAllDsInfo",
+  PORTRAIT_CARD_INFO: "portraitCardInfo",
+  LIST_BY_DIALOGUE_ID: "listByDialogueId",
+  LIST_LOG_BY_PAGE: "listLogByPage",
+  // 知识管理-知识工程
+  KNOWLEDGE_TEMPLATE_LIST: "knowledgeTemplateList",
+  LIST_BY_PARENT_AND_TYPE: "listByParentAndType",
+  LIST_BY_TYPE: "listByType",
+  RELATION_DETAIL: "relationDetail",
+  DIALOGUE_USABLE: "dialogueUsable",
+  KNOWLEDGE_CONFIG_LIST_BY_TYPE: "knowledgeConfigListByType",
+  KNOWLEDGE_TEMPLATE_APPLY_LIST: "knowledgeTemplateApplyList",
+  KNOWLEDGE_TEMPLATE_APPLY_SHOW_DIFFER: "knowledgeTemplateApplyShowDiffer",
+  // BOT相关queryKey
+  BOT_LIST_BY_PAGE: "botListByPage",
+  BOT_INFO: "botInfo",
+  NAMESPACE_LIST: "namespaceList",
+  CHAT_MODEL_LIST: "chatModelList",
+  IS_GENERAL_ADMIN: "isGeneralAdmin",
+  FORM_CONTROL_TYPE: "formControlType",
+  LLM_MODEL_TYPE: "llmModelType",
+  OUTPUT_TYPE: "outputType",
+  SKILL_STATUS: "skillStatus",
+  SKILL_TYPE: "skillType",
+  TOOL_TYPE: "toolType",
+  VARIABLE_TYPE: "variableType",
+  SKILL_INFO: "skillInfo",
+  LATEST_DEFINITION: "latestDefinition",
+  LATEST_AGENT_DEFINITION: "latestAgentDefinition",
+  SKILL_LIST_BY_PAGE: "skillListByPage",
+  SUBSCRIBE_SKILL_LIST_BY_PAGE: "subscribeSkillListByPage",
+  AGENT_LIST_BY_PAGE: "agentListByPage",
+  AGENT_LIST_FOR_RELEASED: "agentListForReleased",
+  AGENT_LIST: "agentList",
+  AGENT_LATEST_DEBUG_SESSION: "agentLatestDebugSession",
+  AGENT_DEBUG_SESSIONS: "agentDebugSessions",
+  GLOBAL_VARIABLE: "globalVariable",
+  SKILL_VERSION_LIST: "skillVersionList",
+  AGENT_VERSION_LIST: "agentVersionList",
+  SKILL_TEMPLATE: "skillTemplate",
+  ENABLE_RERANK: "enableRerank",
+  NEW_GLOBAL_VARIABLE: "newGlobalVariable",
+  TABLE_FILE_TYPE: "tableFileType",
+  APP_PLATFORM_LIST: "appPlatformList",
+  PICTURE_MODEL_TYPE: "pictureModelType",
+  SEARCH_ENGINE_TYPE: "search_engine_type",
+  WEB_SEARCH_ENGINE_TYPE: "web_search_engine_type",
+  ADMIN_ROLES: "adminRoles",
+  BOT_AUTH_ROLE: "botAuthRole",
+  TAG_LIST: "tagList",
+  BOT_CONSTANTS_PAGE: "botConstantsPage",
+  WORKER_SKILLS: "workerSkills",
+  AB_EXPERIMENTS: "abExperiments",
+  AVAILABLE_LIMIT_PAGE: "availableLimitPage",
+  AVAILABLE_LIMIT_DEFAULT_DATA: "availableLimitDefaultData",
+  SUBSCRIBE_SKILL_LIST: "subscribeSkillList",
+  AVAILABLE_PLUGIN_TOOLS: "availablePluginTools",
+
+  SKILL_BOTTOM_OPTION: "skillBottomOption",
+  SKILL_USER_LIST: "skillUserList",
+
+  // 工作台相关
+  WORKBENCH_FETCH_ALL: "workbenchFetchAll",
+  WORKBENCH_BIND_BOT: "workbenchBindBot",
+  WORKBENCH_FETCH_BOTS: "workbenchFetchBots",
+
+  // 权限相关
+  PROMPT_DETAIL: "promptDetail",
+  AUTH_PERMISSION_GROUP_LIST: "authPermissionGroupList",
+  AUTH_PERMISSION_GROUP_PAGE: "authPermissionGroupPage",
+  AUTH_PERMISSION_SKILL_TEMPLATE_PAGE: "authPermissionSkillTemplatePage",
+  AUTH_ROLE_DETAIL: "authRoleDetail",
+  AUTH_ROLE_LIST: "authRoleList",
+  AUTH_ROLE_PAGE: "authRolePage",
+  AUTH_USER_ADMIN_USER: "authUserAdminUser",
+  AUTH_USER_PAGE: "authUserPage",
+  AUTH_RESOURCE_LIST_BOT_RESOURCE: "authResourceListBotResource",
+  AUTH_USER_WHETHER_ADMIN: "authUserWhetherAdmin",
+  DICTIONARY_USER_STATUS: "dictionary_user_status",
+  AUTH_MENU_ROLE_TREE: "auth_menu_role_tree",
+  AUTH_ADMIN_ROLES: "auth_admin_roles",
+  AUTH_MENU_TYPE: "auth_menu_type",
+  AUTH_ROLE_TYPE: "auth_role_type",
+  AUTH_USER_DETAIL: "auth_user_detail",
+  TAG_PAGE: "tag_page",
+
+  // 数据统计
+  DATA_FEED_TAG: "data_feed_tag",
+  DATA_FEED_SOURCE: "data_feed_source",
+
+  TEST_SET_DETAIL: "test_set_detail",
+  AGENT_TEST_SET_DETAIL: "agent_test_set_detail",
+  TEST_SET_PAGE: "test_set_page",
+  AGENT_TEST_SET_PAGE: "agent_test_set_page",
+  TEST_SET_SCHEMA: "test_set_schema",
+  TEST_SKILL_VERSION_LIST: "test_skill_version_list",
+  TEST_AGENT_SKILL_VERSION_LIST: "test_agent_skill_version_list",
+
+  // 结构化知识库
+  IMPORTSTRUCTUREDATASETRESULT: "importstructuredatasetresult",
+  FETCHSTRUCTUREDATASETLIST: "fetchstructuredatasetlist",
+  FETCHRETRIEVALSETTING: "fetchretrievalsetting",
+  FETCHSTRUCTUREDATASETCATALOG: "fetchstructuredatasetcatalog",
+  FETCHSTRUCTUREDATASETRECORDLIST: "fetchstructuredatasetrecordlist",
+  FETCHSTRUCTUREDATASETFIELDLAYOUT: "fetchstructuredatasetfieldlayout",
+  FETCHFIELDTYPES: "fetchfieldtypes",
+  FETCHSTRUCTUREDATASETDETAIL: "fetchstructuredatasetdetail",
+  FETCH_DATASET_LIST_BY_BOT_NO: "fetchDatasetListByBotNo",
+  FETCH_DESIGNATED_SOURCE_TAG: "fetchDesignatedSourceTag",
+  FETCH_CHANNEL_LIST: "fetchChannelList",
+
+  // 枚举
+  AUDIO_MODEL_SCENE: "audioModelScene",
+
+  // 市集相关
+  MARKET_HOME: "MARKET_HOME",
+  SUBSCRIBABLE_RESOURCES: "SUBSCRIBABLE_RESOURCES",
+  SUBSCRIBABLE_BOTS: "SUBSCRIBABLE_BOTS",
+  TIMBRE_MARKET: "TIMBRE_MARKET",
+  TIMBRE_DETAIL: "TIMBRE_DETAIL",
+  MODEL_SERIES_MARKET: "MODEL_SERIES_MARKET",
+  // 插件相关
+  PLUGIN_TOOL_LIST: "pluginToolList",
+  PLUGIN_DETAIL: "pluginDetail",
+  PLUGIN_LIST: "pluginList",
+  PLUGIN_SUB_LIST: "pluginSubList",
+  PLUGIN_TOOL_INFO: "pluginToolInfo",
+  PLUGIN_INFO: "pluginInfo",
+  SHOW_ADVANCE_SETTING: "showAdvanceSetting",
+  MCP_TOOL_LIST: "mcpToolList",
+
+  MULTI_MODAL_LLM_MODEL_TYPE: "multiModalLlmModelType",
+  MODAL_TYPE: "modalType",
+
+  // 模型管理
+  MODELS_LIST: "modelsList",
+  MODELS_TYPES: "modelsTypes",
+
+  SOURCE_TAG_LIST: "sourceTagList",
+
+  TEST_SET_LIST_BY_PAGE: "testSetListByPage",
+  TEST_SET_LIST: "testSetList",
+  BOT_DATA_LIST: "dataListByPage",
+
+  ROBOT_LIST: "robotList",
+  APPLICATION_LIST: "applicationList",
+
+  TOOL_LIST: "toolList",
+  AI_CREATE_SESSION_MESSAGES: "AICreateSessionMessages",
+  AI_CREATE_SKILL_DEFINITION: "AICreateSkillDefinition",
+  OPTIMIZATION_ORDER_DETAIL: "OPTIMIZATION_ORDER_DETAIL",
+  OPTIMIZATION_ORDER_LIST_BY_PAGE: "OPTIMIZATION_ORDER_LIST_BY_PAGE",
+  GET_CREATE_OPTIMIZATION_PRE_CHECK: "GET_CREATE_OPTIMIZATION_PRE_CHECK",
+  OPTIMIZATION_STATUS: "OPTIMIZATION_STATUS",
+  OPTIMIZATION_PRIORITY: "OPTIMIZATION_PRIORITY",
+  OPTIMIZATION_OPTION: "OPTIMIZATION_OPTION",
+  AUTH_USER_LIST: "AUTH_USER_LIST",
+  SESSION_RESPONSE: "SESSION_RESPONSE",
+  VOICE_RECORD_AUDIO_INFO: "VOICE_RECORD_AUDIO_INFO",
+  VOICE_RECORD_AUDIO_INFO_BY_SESSIONID: "VOICE_RECORD_AUDIO_INFO_BY_SESSIONID",
+
+  // 语音Agent相关
+  VOICE_AGENT_LIST: "VOICE_AGENT_LIST",
+  VOICE_AGENT_FLOW_CONFIG: "VOICE_AGENT_FLOW_CONFIG",
+  VOICE_AGENT_SCRIPT_LIST: "VOICE_AGENT_SCRIPT_LIST",
+  VOICE_AGENT_EVENT_LIST: "VOICE_AGENT_EVENT_LIST",
+  VOICE_AGENT_NODE_DETAILS: "VOICE_AGENT_NODE_DETAILS",
+  SCRIPT_LIST_BY_PAGE: "SCRIPT_LIST_BY_PAGE",
+  META_AGENT_MODEL_LIST: "META_AGENT_MODEL_LIST",
+  AGENT_LOCK_INFO: "AGENT_LOCK_INFO",
+  VOICE_AGENT_SCRIPT_LIST_V2: "VOICE_AGENT_SCRIPT_LIST_V2",
+
+  // 数据飞轮相关
+  FLYWHEEL_TASKS: "FLYWHEEL_TASKS",
+  FLYWHEEL_DASHBOARD_SUMMARY: "FLYWHEEL_DASHBOARD_SUMMARY",
+  FLYWHEEL_DASHBOARD_PROBLEM_CATEGORIES: "FLYWHEEL_DASHBOARD_PROBLEM_CATEGORIES",
+  FLYWHEEL_DASHBOARD_CLUSTERS: "FLYWHEEL_DASHBOARD_CLUSTERS",
+  FLYWHEEL_DASHBOARD_TREND: "FLYWHEEL_DASHBOARD_TREND",
+  FLYWHEEL_DASHBOARD_OPTIMIZATION_ORDERS: "FLYWHEEL_DASHBOARD_OPTIMIZATION_ORDERS",
+  FLYWHEEL_CLUSTER_TASK: "FLYWHEEL_CLUSTER_TASK",
+  FLYWHEEL_MATCH_CASE: "FLYWHEEL_MATCH_CASE",
+  FLYWHEEL_GENERATE_OPTIMIZATION: "FLYWHEEL_GENERATE_OPTIMIZATION",
+  FLYWHEEL_QUERY_SUGGESTIONS: "FLYWHEEL_QUERY_SUGGESTIONS",
+  FLYWHEEL_UPDATE_SUGGESTION_STATUS: "FLYWHEEL_UPDATE_SUGGESTION_STATUS",
+
+  FLYWHEEL_DASHBOARD_TOTALBUSINE: "FLYWHEEL_DASHBOARD_TOTALBUSINE",
+  FLYWHEEL_DASHBOARD_STAGEANALYSIS: "FLYWHEEL_DASHBOARD_STAGEANALYSIS",
+  FLYWHEEL_PROBLEM_DISTRIBUTION: "FLYWHEEL_PROBLEM_DISTRIBUTION",
+  FLYWHEEL_PROBLEM_CLUSTERS: "FLYWHEEL_PROBLEM_CLUSTERS",
+  FLYWHEEL_LOSS_RATE_TREND: "FLYWHEEL_LOSS_RATE_TREND",
+  FLYWHEEL_DASHBOARD_DATAACCUMULATION: "FLYWHEEL_DASHBOARD_DATAACCUMULATION",
+
+  FLYWHEEL_SCENARIO_INFO: "FLYWHEEL_SCENARIO_INFO",
+  FLYWHEEL_DATASOURCE_SELECT: "FLYWHEEL_DATASOURCE_SELECT",
+  FLYWHEEL_DATASOURCE: "FLYWHEEL_DATASOURCE",
+  FLYWHEEL_STAGE: "FLYWHEEL_STAGE",
+  FLYWHEEL_SUBTASKS: "FLYWHEEL_SUBTASKS",
+  FLYWHEEL_CATEGORY: "FLYWHEEL_CATEGORY",
+  FLYWHEEL_PROMPT: "FLYWHEEL_PROMPT",
+  FLYWHEEL_CHAT_RECORD: "FLYWHEEL_CHAT_RECORD",
+  FLYWHEEL_CONFIG_RESULT: "FLYWHEEL_CONFIG_RESULT",
+
+  // 版本发布相关
+  VERSION_PUBLISH_CONFIG: "VERSION_PUBLISH_CONFIG",
+  VERSION_PUBLISH_ORDER_LIST: "VERSION_PUBLISH_ORDER_LIST",
+  VERSION_PUBLISH_ENTITY_CHANGE_LIST: "VERSION_PUBLISH_ENTITY_CHANGE_LIST",
+  VERSION_PUBLISH_ORDER_DETAIL: "VERSION_PUBLISH_ORDER_DETAIL",
+  VERSION_PUBLISH_EVENT_RECORDS: "VERSION_PUBLISH_EVENT_RECORDS",
+  VERSION_PUBLISH_GRAY_PLAN: "VERSION_PUBLISH_GRAY_PLAN",
+
+  // 技术雷达相关
+  TECHNICAL_RADAR_LIST: "TECHNICAL_RADAR_LIST",
+  TECHNICAL_RADAR_DETAIL: "TECHNICAL_RADAR_DETAIL",
+  TECHNICAL_RADAR_APPROVW: "TECHNICAL_RADAR_APPROVW"
+}
+/**
+ * @description: 所属管理员
+ * @return {*}
+ */
+export const AUTH_ADMIN_ROLES = {
+  SUPER_ADMIN: "SUPER_ADMIN"
+}
+export const ROLE_TYPE = {
+  SUPER_ADMIN: "SUPER_ADMIN", //超级管理员
+  GENERAL_ADMIN: "GENERAL_ADMIN", //普通管理员
+  COMMON: "COMMON" //普通角色
+}

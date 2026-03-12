@@ -1,0 +1,21 @@
+.entry-page {
+  // background: linear-gradient(180deg, #EBEAFF -39%, #FFF 30.97%) ;
+  background-color: #fff;
+}
+
+.entry-page-no-iframe {
+  height: 93vh !important;
+  overflow: hidden;
+  overflow-y: auto !important;
+  // padding: 0 32px;
+  background: #fff;
+  padding: 18px;
+  margin: 10px 9px;
+  border-radius: 8px;
+}
+.no-iframe-header {
+  .M-header {
+    margin-left: 0px !important;
+    height: 50px !important;
+  }
+}

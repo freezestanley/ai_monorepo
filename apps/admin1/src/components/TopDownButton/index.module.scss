@@ -1,0 +1,58 @@
+.scroll-btn-box {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1000;
+  right: 20px;
+  bottom: 10vh;
+
+  .hidden-element {
+    animation: fadeOut 0.5s ease forwards;
+  }
+
+  .visible-element {
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      visibility: hidden;
+    }
+    to {
+      opacity: 0.9;
+      visibility: visible;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 0.9;
+      visibility: visible;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  :global {
+    .anticon {
+      width: 45px;
+      height: 45px;
+      border-radius: 100%;
+      background: #ddd;
+      color: #fff;
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0.9;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
